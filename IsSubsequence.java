@@ -22,7 +22,7 @@ If there are lots of incoming S, say S1, S2, ... , Sk where k >= 1B, and you wan
 Credits:
 Special thanks to @pbrother for adding this problem and creating all test cases.
 
-Link : https://leetcode.com/problems/distribute-candies-to-people/
+Link : https://leetcode.com/problems/is-subsequence/
 
 */
 
