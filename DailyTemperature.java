@@ -51,3 +51,26 @@ class Solution {
 }
 
 // Using 2 loops
+class Solution {
+    public int[] dailyTemperatures(int[] T) {
+        int[] ans =new int[T.length];
+        int i=0;
+        
+        while(i<T.length)
+        {
+            for (int j=i+1;j<T.length;j++)
+            {
+                boolean foundAnswer=false;
+                if (T[j]>T[i]){
+                    ans[i]=j-i;
+                    foundAnswer=true;
+                    break;
+                }
+                if(!foundAnswer)
+                    ans[i]=0;
+            }
+            i++;
+        }
+        return ans;
+}
+}
