@@ -30,34 +30,24 @@ class Solution {
         for (int i=T.length-2;i>=0;i--)
         {
             if(tempStack.peek()>T[i])
-            {
-                tempStack.push(T[i]);
-                posStack.push(i);
                 ans[i]=1;
-            }
             else
             {
                 while(!tempStack.isEmpty() && tempStack.peek()<=T[i]){
                     posStack.pop();
                     tempStack.pop();
                 }
-                if(tempStack.isEmpty()){
+                if(tempStack.isEmpty())
                     ans[i]=0;
-                    tempStack.push(T[i]);
-                    posStack.push(i);
-                }
-                else{
+                else
                     ans[i]=posStack.peek()-i;
-                    tempStack.push(T[i]);
-                    posStack.push(i);
-                }
-                
             }
+            tempStack.push(T[i]);
+            posStack.push(i);
         
         }
         return ans;
     }
 }
-
 
 // Using 2 loops
