@@ -72,3 +72,32 @@ class Solution {
         }
     }
 }
+
+//Stack (Don't have to use a Linked List to maintain the ordered elements.)
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int kthSmallest(TreeNode root, int k) {
+        
+        Stack <TreeNode> stack = new Stack<>();
+        while(root!=null || !stack.isEmpty())
+        {
+            while(root!=null){
+            stack.push(root);
+            root=root.left;
+            }
+            root=stack.pop();
+            if(--k==0)
+                return root.val;
+            root=root.right;
+            }
+    return 0;    
+    }
+}
