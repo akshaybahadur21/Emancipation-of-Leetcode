@@ -9,3 +9,6 @@ Heap
   
 Backtracking (Problem of Subsets)
   - [Explanation by Abdul Bari](https://www.youtube.com/watch?v=kyLxTdsT8ws)
+  
+Dynamic Programming
+  - [DP by Tushar Roy](https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLgwE03nSxZ4GoHvoy6ay6OSBmcJ6BX2h7)
