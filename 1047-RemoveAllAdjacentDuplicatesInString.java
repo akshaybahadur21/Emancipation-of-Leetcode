@@ -38,8 +38,6 @@ class Solution {
                 sb.delete(i,i+2);
                 if (i!=0)
                     i--;
-                else
-                    i=0;
                 continue;
             }
             i++;
