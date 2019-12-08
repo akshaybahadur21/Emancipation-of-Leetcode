@@ -17,3 +17,8 @@ Dynamic Programming
 Helpful Discussion
 
 [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
+
+## Company Specific Links
+
+- Amazon
+    - [Amazon LP Interviews](https://www.youtube.com/playlist?list=PLI-WhpYiqcd1W1WrRUNLUilzEIO8KJgUA)
