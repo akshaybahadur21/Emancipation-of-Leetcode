@@ -4,11 +4,9 @@ My solutions for leetcode questions for humans.
 
 ## List of resources 
 
-Heap
-  - [Explanation by the Author of Cracking the coding interview](https://www.youtube.com/watch?v=t0Cq6tVNRBA)
-
-Hash Tables
-  - [Explanation by the Author of Cracking the coding interview](https://www.youtube.com/watch?v=shs0KM3wKv8)
+Gayle Laakmann McDowell playlist (Author of Cracking the coding interview)
+  - [Data Structures](https://www.youtube.com/playlist?list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX)
+  - [Algorithms](https://www.youtube.com/playlist?list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)
   
 Backtracking (Problem of Subsets)
   - [Explanation by Abdul Bari](https://www.youtube.com/watch?v=kyLxTdsT8ws)
@@ -19,10 +17,6 @@ Dynamic Programming
 
 Helpful Discussion
   - [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
-
-Gayle Laakmann McDowell playlist (Author of Cracking the coding interview)
-  - [Data Structures](https://www.youtube.com/playlist?list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX)
-  - [Algorithms](https://www.youtube.com/playlist?list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)
   
 ## Company Specific Links
 
