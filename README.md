@@ -21,4 +21,4 @@ Helpful Discussion
 ## Company Specific Links
 
 - Amazon
-    - [Amazon LP Interviews](https://www.youtube.com/playlist?list=PLI-WhpYiqcd1W1WrRUNLUilzEIO8KJgUA)
+    - [Amazon LP Interview](https://www.youtube.com/playlist?list=PLI-WhpYiqcd1W1WrRUNLUilzEIO8KJgUA)
