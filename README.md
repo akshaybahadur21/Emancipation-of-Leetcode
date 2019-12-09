@@ -14,6 +14,10 @@ Backtracking (Problem of Subsets)
   
 Dynamic Programming
   - [DP by Tushar Roy](https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLgwE03nSxZ4GoHvoy6ay6OSBmcJ6BX2h7)
+  
+Useful Playlists
+  - [System Design](https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV)
+  - [Tushar Roy](https://www.youtube.com/user/tusharroy2525)
 
 Helpful Discussion
   - [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
