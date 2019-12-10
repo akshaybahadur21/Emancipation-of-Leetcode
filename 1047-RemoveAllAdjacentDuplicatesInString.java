@@ -46,3 +46,26 @@ class Solution {
         
     }
 }
+
+// Using Stack based approach
+
+class Solution {
+    public String removeDuplicates(String S) {
+        Deque<Character> dequeue = new LinkedList<Character>();
+        StringBuilder sb = new StringBuilder();
+        for (int i=0;i<S.length();i++){
+            if (dequeue.peekFirst()==null)
+                dequeue.addFirst(S.charAt(i));
+            
+            else if (S.charAt(i)==dequeue.peekFirst())
+                dequeue.removeFirst();
+            
+            else
+                dequeue.addFirst(S.charAt(i));
+        }
+        while(dequeue.peekLast()!=null)
+            sb.append(dequeue.pollLast());
+        return sb.toString();
+        
+    }
+}
