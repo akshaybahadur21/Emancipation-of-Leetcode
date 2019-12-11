@@ -66,3 +66,47 @@ class Solution {
         
     }
 }
+
+// BFS solution using queue
+
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> neighbors;
+
+    public Node() {}
+
+    public Node(int _val,List<Node> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
+    }
+};
+*/
+class Solution {
+    public Node cloneGraph(Node node) {
+        if (node == null)
+            return null;
+        
+        Node cloneNode = new Node(node.val, new ArrayList<Node>());
+        
+        Map <Node, Node> visitedMap = new HashMap<>();
+        visitedMap.put(node, cloneNode);
+        
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(node);
+        
+        while(!queue.isEmpty()){
+            Node tempNode = queue.poll();
+            for (Node n : tempNode.neighbors){ // going through all the neighbours
+                if(!visitedMap.containsKey(n)){
+                    visitedMap.put(n, new Node(n.val, new ArrayList<Node>()));
+                    queue.add(n);
+                }
+            visitedMap.get(tempNode).neighbors.add(visitedMap.get(n)); 
+                
+            }
+        }
+        return cloneNode;
+    }
+}
