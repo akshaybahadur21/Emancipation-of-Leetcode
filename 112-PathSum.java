@@ -47,3 +47,41 @@ class Solution {
     return dfs(root.left, sum - root.val) || dfs(root.right, sum - root.val);
     }
 }
+
+// Iterative Solution
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null)
+            return false;
+        Stack <TreeNode> stack = new Stack<>();
+        Stack <Integer> value = new Stack<>();
+        stack.push(root);
+        value.push(root.val);
+        while(!stack.isEmpty()){
+            TreeNode tempNode = stack.pop();
+            int tempVal = value.pop();
+            if (tempNode.left == null && tempNode.right == null && tempVal == sum)
+                return true;
+            else{
+                    if (tempNode.left != null){
+                        stack.push(tempNode.left);
+                        value.push(tempVal + tempNode.left.val);
+                    }
+                    if (tempNode.right != null) {
+                        stack.push(tempNode.right);
+                        value.push(tempVal + tempNode.right.val);
+                     }
+            }
+        }
+        return false;
+    }
+}
