@@ -68,3 +68,46 @@ class MinStack {
  * int param_3 = obj.top();
  * int param_4 = obj.getMin();
  */
+
+// Using 2 stacks
+
+class MinStack {
+
+    /** initialize your data structure here. */
+    Stack<Integer> stack;
+    Stack<Integer> minStack;
+    public MinStack() {
+        this.stack = new Stack<>();
+        this.minStack = new Stack<>();
+    }
+    
+    public void push(int x) {
+        if(this.minStack.isEmpty() || x <= this.minStack.peek() )
+            this.minStack.push(x);
+        this.stack.push(x);
+        
+    }
+    
+    public void pop() {
+        if(this.stack.peek().equals(this.minStack.peek())){
+            this.minStack.pop();
+        }
+        this.stack.pop();
+    }
+    
+    public int top() {
+        return this.stack.peek();
+    }
+    
+    public int getMin() {
+        return this.minStack.peek();   
+    }
+}
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
