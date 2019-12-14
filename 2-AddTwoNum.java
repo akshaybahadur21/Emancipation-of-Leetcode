@@ -58,3 +58,46 @@ class Solution {
         
     }
 }
+
+// Using BigInteger
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+import java.math.BigInteger;
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
+        BigInteger num1 = getReversedNumber(l1);
+        BigInteger num2 = getReversedNumber(l2);
+        BigInteger sum = num1.add(num2);
+        String result = getReverseStringFromString(String.valueOf(sum));
+        ListNode res = new ListNode(Character.getNumericValue(result.charAt(0)));
+        ListNode temp = res;
+        for(int i = 1; i< result.length(); i++){
+            temp.next = new ListNode(Character.getNumericValue(result.charAt(i)));
+            temp = temp.next;
+        }
+        return res;
+    }
+    
+    private BigInteger getReversedNumber (ListNode l1){
+        String s ="";
+        while(l1 != null){
+            s+=String.valueOf(l1.val);
+            l1 = l1.next;
+        }
+        return new BigInteger(getReverseStringFromString(s));
+    }
+    
+    private String getReverseStringFromString (String s){
+        String reverse = new StringBuffer(s).reverse().toString();
+        return reverse;
+    }
+    
+}
