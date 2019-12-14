@@ -32,3 +32,6 @@ Helpful Discussion
 
 - Amazon
     - [Amazon LP Interview](https://www.youtube.com/playlist?list=PLI-WhpYiqcd1W1WrRUNLUilzEIO8KJgUA)
+    - [Amazon Star Method](https://interviewsteps.com/blogs/news/amazon-star-method)
+    - [Amazon Leadership Principles](https://interviewsteps.com/blogs/news/amazon-leadership-principles-interview)
+    - [Amazon General Guideline](https://interviewgenie.com/blog-1/category/Amazon+interviews)
