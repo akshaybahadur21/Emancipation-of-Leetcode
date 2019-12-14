@@ -15,6 +15,9 @@ Backtracking (Problem of Subsets)
   - [Explanation by Abdul Bari](https://www.youtube.com/watch?v=kyLxTdsT8ws)
   - [General approach for solving subsets problem using backtracking](https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning))
   
+Bit Manupulation
+  - [General Approach](https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary%3A-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently)
+  
 Dynamic Programming
   - [DP by Tushar Roy](https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLgwE03nSxZ4GoHvoy6ay6OSBmcJ6BX2h7)
   
