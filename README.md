@@ -24,6 +24,8 @@ Dynamic Programming
 Useful Playlists
   - [System Design](https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV)
   - [Tushar Roy](https://www.youtube.com/user/tusharroy2525)
+  - [Back To Back SWE](https://www.youtube.com/channel/UCmJz2DV1a3yfgrR7GqRtUUA/playlists)
+  - [Machine Learning](https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF)
 
 Helpful Discussion
   - [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
