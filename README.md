@@ -27,6 +27,7 @@ Useful Playlists
 
 Helpful Discussion
   - [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
+  - [Top 10 Algorithms to Know | GfG](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
   
 ## Company Specific Links
 
