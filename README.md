@@ -22,7 +22,7 @@ Dynamic Programming
   - [DP by Tushar Roy](https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLgwE03nSxZ4GoHvoy6ay6OSBmcJ6BX2h7)
   
 Useful Playlists
-  - [System Design Narendra L](https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV)
+  - [System Design - Narendra L](https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV)
   - [Tushar Roy](https://www.youtube.com/user/tusharroy2525)
   - [Back To Back SWE](https://www.youtube.com/channel/UCmJz2DV1a3yfgrR7GqRtUUA/playlists)
   - [Gaurav Sen](https://www.youtube.com/channel/UCRPMAqdtSgd0Ipeef7iFsKw)
