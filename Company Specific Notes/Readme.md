@@ -24,4 +24,7 @@
      - [Coding questions with Solutions](https://www.youtube.com/watch?v=3RQ5ADUKHsY&list=PLi9RQVmJD2fb2Q_nl9V9IzTstSAUx9vje)
      
  - LinkedIn
-     - [Coding questions with Solutions](https://www.youtube.com/watch?v=fZIsEPhSBgM&list=PLi9RQVmJD2fY5Uk0GVf_aBmTaDXctp7zx)   
+     - [Coding questions with Solutions](https://www.youtube.com/watch?v=fZIsEPhSBgM&list=PLi9RQVmJD2fY5Uk0GVf_aBmTaDXctp7zx)  
+     
+ ### Books
+[Grokking Algorithms](https://github.com/KevinOfNeu/ebooks/blob/master/Grokking%20Algorithms.pdf)
