@@ -39,6 +39,11 @@ Helpful Discussion
  Paid Courses
   - [Grokking the Coding Interview](https://www.educative.io/courses/grokking-the-coding-interview)
   - [Grokking rhe Dynamic Programming](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews)
-  - [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)
+  - [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview) -> (
+  [Part1](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-1/579) |
+  [Part2](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-2/580) |
+  [Part3](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-3/581) |
+  [Part4](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-4/583) |
+  [Part5](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-5/584/5))
   
 ## [Company Specific Links](https://github.com/akshaybahadur21/Leetcode/tree/master/Company%20Specific%20Notes)
