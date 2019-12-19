@@ -36,4 +36,9 @@ Helpful Discussion
   - [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
   - [Top 10 Algorithms to Know | GfG](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
   
+ Paid Courses
+  - [Grokking the Coding Interview](https://www.educative.io/courses/grokking-the-coding-interview)
+  - [Grokking rhe Dynamic Programming](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews)
+  - [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)
+  
 ## [Company Specific Links](https://github.com/akshaybahadur21/Leetcode/tree/master/Company%20Specific%20Notes)
