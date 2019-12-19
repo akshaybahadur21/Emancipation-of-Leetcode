@@ -2,7 +2,7 @@
 My solutions for leetcode questions for humans.
 
 
-## List of resources 
+## Resources 
 
 Gayle Laakmann McDowell playlist (Author of Cracking the coding interview)
   - [Data Structures](https://www.youtube.com/playlist?list=PLI1t_8YX-Apv-UiRlnZwqqrRT8D1RhriX)
@@ -36,4 +36,4 @@ Helpful Discussion
   - [Clayton | Google | L5 | MTV | Oct 2019 | Offer](https://leetcode.com/discuss/interview-experience/424540/google-l5-mtv-oct-2019-offer)
   - [Top 10 Algorithms to Know | GfG](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
   
-## [Company Specific Links]()
+## [Company Specific Links](https://github.com/akshaybahadur21/Leetcode/tree/master/Company%20Specific%20Notes)
