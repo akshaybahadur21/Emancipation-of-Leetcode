@@ -45,5 +45,6 @@ Helpful Discussion
   [Part3](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-3/581) |
   [Part4](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-4/583) |
   [Part5](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-5/584/5))
+ - [Free Grokking patterns](https://sadihassan.github.io/leetlist/educative_pattern.html)
   
 ## [Company Specific Links](https://github.com/akshaybahadur21/Leetcode/tree/master/Company%20Specific%20Notes)
