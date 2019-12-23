@@ -9,7 +9,7 @@ In complex questions, think from the brute force solution, and think how to opti
 Don’t wait for the best solution if you don’t have yet. Remember to get the **interviewer’s agreement** before writing code.
 
 - During your implementation, if the interviewer asks you some questions, stop and think about it. 
-The interviewer is giving you a **hint by asking you questions. **
+The interviewer is giving you a **hint by asking you questions.**
 
 - **Never “argue”** about different workaround. The **best practice is to write out what’s in the interviewer’s mind.** 
 Be nice and treat the interviewer as your colleague.
