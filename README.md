@@ -20,6 +20,7 @@ Bit Manupulation
   
 Dynamic Programming
   - [DP by Tushar Roy](https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLgwE03nSxZ4GoHvoy6ay6OSBmcJ6BX2h7)
+  - [Dynamic Programming patterns | LC](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
   
 System Design
 - [***Akshay Bahadur Notes***](https://github.com/akshaybahadur21/Leetcode/tree/master/System%20Design%20Notes)
