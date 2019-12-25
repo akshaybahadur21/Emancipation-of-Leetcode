@@ -47,3 +47,30 @@ class Solution {
         return resList.stream().mapToInt(Number::intValue).toArray();
     }
 }
+
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        //Sort 2 arrays
+        // Use 2 pointers to maintain the resList
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        List<Integer> ansList = new ArrayList<>();
+        int p1 = 0;
+        int p2 = 0;
+        while(p1 < nums1.length && p2 < nums2.length){
+            if (nums1[p1] > nums2[p2]){
+                p2++; continue;
+            }
+            if (nums1[p1] < nums2[p2]){
+                p1++; continue;
+            }
+            if(nums1[p1] == nums2[p2]){
+                ansList.add(nums1[p1]);
+                p1++;
+                p2++;
+
+            }
+        }
+        return ansList.stream().mapToInt(Number::intValue).toArray();
+    }
+}
