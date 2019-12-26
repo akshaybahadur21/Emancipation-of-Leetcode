@@ -106,3 +106,52 @@ class Solution {
         }
     }
 }
+
+//DFS
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    //traverse dfs
+    //start with 0 depth
+    // return true when you find x and y at the same depth
+    Map<Integer, Integer> parentChildMap;
+    int lCousinDepth = -1;
+    int rCousinDepth = -1;
+    public boolean isCousins(TreeNode root, int x, int y) {
+        if (root == null)
+            return false;
+        parentChildMap = new HashMap<>();
+        dfs(root, 0, x, y);
+        return lCousinDepth == rCousinDepth && parentChildMap.get(x) != parentChildMap.get(y);
+        
+    }
+    
+    private void dfs(TreeNode root, int depth, int x, int y){
+        if (root == null)
+            return;
+        
+        if(root.val == x)
+            lCousinDepth = depth;
+        if(root.val == y)
+            rCousinDepth = depth;
+        
+        if (lCousinDepth != -1 && rCousinDepth != -1)
+            return;
+            
+        if (root.left != null)
+            parentChildMap.put(root.left.val, root.val);
+        if (root.right != null)
+            parentChildMap.put(root.right.val, root.val);
+        
+        dfs(root.left, depth+1, x, y);
+        dfs(root.right, depth+1, x, y);
+        
+    }
+}
