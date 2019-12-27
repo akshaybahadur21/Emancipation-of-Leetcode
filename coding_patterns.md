@@ -141,8 +141,8 @@
 | Next greater element-2                    	|      	|       	| :x:    	|
 
 ## Notes
-[Leetcode Patterns](https://medium.com/leetcode-patterns)
-[System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [Leetcode Patterns](https://medium.com/leetcode-patterns)
+- [System Design Primer](https://github.com/donnemartin/system-design-primer)
 
 ### Reference
 This md file is generated from a LeetCode discussion thread.
