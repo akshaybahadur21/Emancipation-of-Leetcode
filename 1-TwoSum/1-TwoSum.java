@@ -48,4 +48,50 @@ class Solution {
         }
         return null;
 }
+// Using 2 pointers
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] numsCopy = new int[nums.length];
+        for (int i =0; i<nums.length; i++){
+            numsCopy[i] = nums[i];
+        }
+        Arrays.sort(nums);
+        int[] temp = new int[2];
+        int[] res = new int[2];
+        int p1 = 0;
+        int p2 = nums.length -1;
+        while (p1 != p2){
+            if (nums[p1] + nums[p2] == target){
+                temp[0] = nums[p1];
+                temp[1] = nums[p2];
+                break;
+            }
+            if (nums[p1] + nums[p2] > target){
+                p2--;
+                continue;
+            }
+            if (nums[p1]+nums[p2]< target){
+                p1++;
+                continue;
+            }
+        }
+        int count = 0;
+        for (int i =0; i<numsCopy.length; i++){
+            if (numsCopy[i] == temp[0]){
+                res[count] = i;
+                count++;
+                continue;
+            }
+            if ( numsCopy[i] == temp[1]){
+                res[count] = i;
+                count++;
+                continue;
+            }
+            if (count == 2)
+                return res;
+                
+        }
+        return res;
+    }
+}
 }
