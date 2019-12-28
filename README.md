@@ -38,7 +38,7 @@ Helpful Discussion
   - [Top 10 Algorithms to Know | GfG](https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/)
   
  Paid Courses
-  - [Grokking the Coding Interview](https://www.educative.io/courses/grokking-the-coding-interview) -> [**Notes**](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed)
+  - [Grokking the Coding Interview](https://www.educative.io/courses/grokking-the-coding-interview) -> [**Notes**](https://hackernoon.com/14-patterns-to-ace-any-coding-interview-question-c5bb3357f6ed) =====>> [***Akshay Bahadur Todo***](https://github.com/akshaybahadur21/Leetcode/blob/master/coding_patterns.md)
   - [Grokking rhe Dynamic Programming](https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews)
   - [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview) -> (
   [Part1](https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-1/579) |
