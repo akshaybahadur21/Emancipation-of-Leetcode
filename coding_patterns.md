@@ -12,7 +12,7 @@
 
 | Two Pointers                                       	| Link 	| Notes 	| Status 	|
 |----------------------------------------------------	|------	|-------	|--------	|
-| Pair with Target Sum (easy)                        	|[TwoSum](https://leetcode.com/problems/two-sum/)|       	| :white_check_mark:    	|
+| Pair with Target Sum (easy)                        	|<ul><li>[TwoSum](https://leetcode.com/problems/two-sum/)</li><li>[TwoSum -II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)</li></ul>|       	| :white_check_mark:    	|
 | Remove Duplicates (easy)                           	|      	|       	| :x:    	|
 | Contains Duplicate III                             	|      	|       	| :x:    	|
 | Squares of a Sorted Array (easy)                   	|      	|       	| :x:    	|
