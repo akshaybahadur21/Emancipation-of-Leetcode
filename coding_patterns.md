@@ -13,7 +13,7 @@
 | Two Pointers                                       	| Link 	| Notes 	| Status 	|
 |----------------------------------------------------	|------	|-------	|--------	|
 | Pair with Target Sum (easy)                        	|<ul><li>[TwoSum](https://leetcode.com/problems/two-sum/)</li><li>[TwoSum -II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)</li></ul>|       	| :white_check_mark:    	|
-| Remove Duplicates (easy)                           	|      	|       	| :x:    	|
+| Remove Duplicates (easy)                           	| <ul><li>[Remove Duplicates I](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)</li><li>[Remove Duplicates II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)</li><li>[Remove Duplicates from Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)</li><li>[Find Duplicate](https://leetcode.com/problems/find-the-duplicate-number/)</li><li>[Duplicate Zeros](https://leetcode.com/problems/duplicate-zeros/)</li></ul>     	|       	| :x:    	|
 | Contains Duplicate III                             	|      	|       	| :x:    	|
 | Squares of a Sorted Array (easy)                   	|      	|       	| :x:    	|
 | Triplet Sum to Zero (medium)                       	|      	|       	| :x:    	|
