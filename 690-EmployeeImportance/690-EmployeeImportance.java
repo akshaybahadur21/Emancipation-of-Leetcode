@@ -61,6 +61,47 @@ class Solution {
     }
 }
 
+//dfs with external stack
+/*
+// Employee info
+class Employee {
+    // It's the unique id of each node;
+    // unique id of this employee
+    public int id;
+    // the importance value of this employee
+    public int importance;
+    // the id of direct subordinates
+    public List<Integer> subordinates;
+};
+*/
+class Solution {
+    //search for employee id
+    //get subordinates
+    //check their impartance and recursively call subordinates of subordinates (dfs)
+    Map<Integer, Employee> lookupMap;
+    public int getImportance(List<Employee> employees, int id) {
+        lookupMap = new HashMap<>();
+        for(Employee emp : employees){
+            lookupMap.put(emp.id, emp);
+        }
+        return dfs(id);
+        
+    }
+    private int dfs(int id){
+        int ans = 0;
+        Stack<Integer> s = new Stack<>();
+        s.add(id);
+        while(!s.isEmpty()){
+            Employee emp = lookupMap.get(s.pop());
+            ans+= emp.importance;
+            for (int i : emp.subordinates)
+                s.push(i);
+        }
+        return ans;
+            
+    }
+}
+
 //bfs
 /*
 // Employee info
