@@ -56,3 +56,8 @@ The world is rapidly moving towards multi-core, so know the fundamentals of "mod
 - [InterviewBit - Microsoft](https://www.interviewbit.com/search/?q=Microsoft) (Not so imp)
 
 - [InterviewBit - Top25](https://www.geeksforgeeks.org/top-25-interview-questions/) (Not so imp)
+
+## Previously asked questions
+
+- https://leetcode.com/problems/campus-bikes
+- https://leetcode.com/problems/minimum-path-sum/
