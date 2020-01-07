@@ -7,6 +7,10 @@
 - https://leetcode.com/problems/top-k-frequent-words/
 - https://leetcode.com/problems/number-of-islands/
 - https://leetcode.com/problems/find-the-celebrity/
+- https://leetcode.com/problems/word-break-ii/
+- https://leetcode.com/problems/group-anagrams/
+- https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+- https://leetcode.com/problems/word-ladder-ii/
 
 ## Recently asked behavioral questions
 
@@ -16,4 +20,9 @@
 - what was a challange or problem that you faced ?
 - Tell me about a time when you were not able to deliver on time and what did you do?
 - is it better to have direct interaction with the costumer?
-
+- Tell me about a time when you had to work on something after you have delivered it
+- How did you handle a tight deadline?
+- What aspects would you improve if you had to do it again?
+- Tell me about a time you had to handle conflict
+- Tell me about a time you disagreed with your team
+- Tell me about a time when you went out of your way in your company
