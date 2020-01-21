@@ -65,4 +65,13 @@ The world is rapidly moving towards multi-core, so know the fundamentals of "mod
 - https://leetcode.com/problems/guess-the-word/
 - https://leetcode.com/problems/the-maze-ii/
 - https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/
-- 
+- https://leetcode.com/problems/russian-doll-envelopes/
+- KMP String Matching Algorithm (Trigger Detection in Google Home)
+- https://leetcode.com/problems/non-overlapping-intervals/
+- https://leetcode.com/discuss/interview-question/267985/google-interview-construct-a-word-using-dice
+- https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/
+- https://leetcode.com/discuss/interview-question/352743/Google-or-Onsite-or-Guaranteed-Binary-Search-Numbers
+- https://leetcode.com/problems/insert-delete-getrandom-o1/
+- https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
+- https://leetcode.com/problems/random-pick-with-weight/
+- https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
