@@ -61,3 +61,8 @@ The world is rapidly moving towards multi-core, so know the fundamentals of "mod
 
 - https://leetcode.com/problems/campus-bikes
 - https://leetcode.com/problems/minimum-path-sum/
+- https://leetcode.com/discuss/interview-question/302164/google-phone-screen-monarchy
+- https://leetcode.com/problems/guess-the-word/
+- https://leetcode.com/problems/the-maze-ii/
+- https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/
+- 
