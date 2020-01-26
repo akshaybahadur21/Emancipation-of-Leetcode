@@ -19,6 +19,7 @@
 - Given a list of movies from various websites recommend movies to the user based on movie ratings. For eg. IMDB will give you 10 movies with ratings, Rotten tomatoes will give 15 movies with ratings and so on. After the writing the code the recruiter asked to handle duplicates (same movie name with different rating from different website) https://leetcode.com/problems/merge-k-sorted-lists/
 - https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 - https://leetcode.com/problems/climbing-stairs/
+- https://leetcode.com/discuss/interview-question/488887/amazon-final-interview-questions-sde1
 
 
 ## System design
