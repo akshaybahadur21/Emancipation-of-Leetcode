@@ -75,3 +75,4 @@ The world is rapidly moving towards multi-core, so know the fundamentals of "mod
 - https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
 - https://leetcode.com/problems/random-pick-with-weight/
 - https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
+- https://leetcode.com/discuss/interview-question/494186/google-onsite-grasshopper-position
