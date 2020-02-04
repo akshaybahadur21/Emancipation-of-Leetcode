@@ -1,3 +1,7 @@
+## Must Check
+
+- https://leetcode.com/discuss/interview-question/488887/amazon-final-interview-questions-sde1
+
 ## Recently asked Coding questions
 
 - https://leetcode.com/problems/copy-list-with-random-pointer/
@@ -19,14 +23,14 @@
 - Given a list of movies from various websites recommend movies to the user based on movie ratings. For eg. IMDB will give you 10 movies with ratings, Rotten tomatoes will give 15 movies with ratings and so on. After the writing the code the recruiter asked to handle duplicates (same movie name with different rating from different website) https://leetcode.com/problems/merge-k-sorted-lists/
 - https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 - https://leetcode.com/problems/climbing-stairs/
-- https://leetcode.com/discuss/interview-question/488887/amazon-final-interview-questions-sde1
+- https://leetcode.com/discuss/interview-question/372581
+- 
 
 
 ## System design
 
 - System design: Design an online bookstore
 - Design a file filter system to delete and edit (more like access) files based on directories, extensions, file size, date, name. The questions can be boiled down to create a data structure to store a file attributes (name,dir,extension,size and date of creation/modification) and write functions to modify based on those attributes. NOTE : Files can be nested structures i.e. a file can contain another directory of "files" in it.
-- 
 
 ## Recently asked behavioral questions
 
