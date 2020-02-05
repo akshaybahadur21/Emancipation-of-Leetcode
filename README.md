@@ -9,7 +9,7 @@ Gayle Laakmann McDowell playlist (Author of Cracking the coding interview)
   - [Algorithms](https://www.youtube.com/playlist?list=PLI1t_8YX-ApvMthLj56t1Rf-Buio5Y8KL)
   
 Award Winning Leetcode Articles
-  - [Comprehensive Data Structure and Algorithm Study Guide]((https://github.com/akshaybahadur21/Leetcode/tree/master/Misc_Notes/dsa_guide.md)
+  - [Comprehensive Data Structure and Algorithm Study Guide](https://github.com/akshaybahadur21/Leetcode/tree/master/Misc_Notes/dsa_guide.md)
   
 MIT Lectures
   - [Recursion](https://www.youtube.com/watch?v=WPSeyjX1-4s&t=2064s)
