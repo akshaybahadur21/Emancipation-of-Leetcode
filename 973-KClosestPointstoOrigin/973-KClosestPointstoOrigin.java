@@ -53,3 +53,22 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int[][] kClosest(int[][] points, int K) {
+        
+    PriorityQueue<int[]> heap = new PriorityQueue<>((y, x) -> (x[0]*x[0] + x[1]*x[1]) - (y[0]*y[0]+y[1]*y[1]));        
+        //We created a max priority queue
+        for (int[]p : points){
+            heap.add(p);
+            if (heap.size() > K)
+                heap.poll();
+        }
+        
+        int[][] res = new int[K][];
+        int count=0;
+        while(!heap.isEmpty())
+            res[count++]=heap.poll();
+        return res;
+    }
+}
