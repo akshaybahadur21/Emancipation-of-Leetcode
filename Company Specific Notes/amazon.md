@@ -24,7 +24,9 @@
 - https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 - https://leetcode.com/problems/climbing-stairs/
 - https://leetcode.com/discuss/interview-question/372581
-- 
+- https://leetcode.com/problems/flood-fill/
+- https://leetcode.com/problems/add-strings/
+- https://leetcode.com/problems/minimum-path-sum/
 
 
 ## System design
