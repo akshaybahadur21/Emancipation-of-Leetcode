@@ -27,6 +27,8 @@
 - https://leetcode.com/problems/flood-fill/
 - https://leetcode.com/problems/add-strings/
 - https://leetcode.com/problems/minimum-path-sum/
+- https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+- https://leetcode.com/problems/search-a-2d-matrix-ii/
 
 
 ## System design
@@ -54,4 +56,11 @@
 - Tell me about a time when you failed at something? What did you learn from it?
 - How would you handle a difficult customer or a project partner?
 - https://medium.com/@scarletinked/are-you-the-leader-were-looking-for-interviewing-at-amazon-8301d787815d
+- Tell me about a time when a project (work/school) where you weren't given enough information, how did you handle the ambiguity?
+- Tell me about a time where you made a crucial decision about your project (work/school) and why you chose it?
+- Tell me about a time when you had to learn about a new technology stack, how did you approach it?
+- Tell me a time when you saw something that wasn’t your job description, but acted on it.
+- Tell me a time when you were on a deadline.
+- Tell me a time when your solution didn’t work, how did you find an alternative approach?
+
 
