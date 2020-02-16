@@ -13,6 +13,10 @@ Award Winning Leetcode Articles
   
 MIT Lectures
   - [Recursion](https://www.youtube.com/watch?v=WPSeyjX1-4s&t=2064s)
+  - [Algos Basics](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/)
+  
+Language Basics
+  - [Java](http://www.developersbook.com/corejava/interview-questions/corejava-interview-questions-faqs.php)
   
 Backtracking (Problem of Subsets)
   - [Explanation by Abdul Bari](https://www.youtube.com/watch?v=kyLxTdsT8ws)
