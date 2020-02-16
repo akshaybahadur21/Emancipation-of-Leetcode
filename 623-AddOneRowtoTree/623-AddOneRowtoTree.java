@@ -107,3 +107,42 @@ class Solution {
         return root;
     }
 }
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode addOneRow(TreeNode root, int v, int d) {
+        if (root == null)
+            return null;
+        if (d == 1){
+            TreeNode newRoot = new TreeNode(v);
+            newRoot.left =root;
+            return newRoot;
+        }
+        dfs(root, v, d, 2); //since d==1 is already covered previously, sending current depth = 2
+        return root;
+    }
+    
+    private void dfs(TreeNode node, int v, int d, int currentDepth){
+        if (node == null) return;
+        if (currentDepth == d){
+            TreeNode temp = node.left;
+            node.left = new TreeNode(v);
+            node.left.left = temp;
+            
+            temp = node.right;
+            node.right = new TreeNode(v);
+            node.right.right = temp;
+        }
+        
+        dfs(node.left, v, d, currentDepth + 1);
+        dfs(node.right, v, d, currentDepth + 1);
+    }
+}
