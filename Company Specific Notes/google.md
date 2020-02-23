@@ -44,18 +44,18 @@ The world is rapidly moving towards multi-core, so know the fundamentals of "mod
 ## Links
 
 - [GfG Must do questions](https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/)
-
 - [GfG Cracking any coding interview](https://www.geeksforgeeks.org/practice-for-cracking-any-coding-interview/)
-
 - [GfG Company wise questions](https://www.geeksforgeeks.org/must-coding-questions-company-wise/)
-
 - [InterviewBit - Google](https://www.interviewbit.com/search/?q=Google) (Imp)
-
 - [InterviewBit - Amazon](https://www.interviewbit.com/search/?q=Amazon)
-
 - [InterviewBit - Microsoft](https://www.interviewbit.com/search/?q=Microsoft) (Not so imp)
-
 - [InterviewBit - Top25](https://www.geeksforgeeks.org/top-25-interview-questions/) (Not so imp)
+
+## Casual articles
+- [Google Interview Tips](https://www.rooftopslushie.com/request/Google%20SWE%20Interview%20Tips-10)
+- [CNBC article about what it takes to hire a Googler](https://www.cnbc.com/2019/04/17/heres-how-many-google-job-interviews-it-takes-to-hire-a-googler.html)
+- [How I got into Google Medium Post](https://blog.usejournal.com/how-i-got-into-google-161c97913b8b)
+- [Walkthroughs of Google interview problems: Ratio finder](https://medium.com/@alexgolec/google-interview-problems-ratio-finder-d7aa8bf201e3)
 
 ## Previously asked questions
 
@@ -78,3 +78,7 @@ The world is rapidly moving towards multi-core, so know the fundamentals of "mod
 - https://leetcode.com/discuss/interview-question/494186/google-onsite-grasshopper-position
 - https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/
 - https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/
+- https://leetcode.com/problems/stream-of-characters
+- https://leetcode.com/problems/24-game/
+- https://leetcode.com/discuss/interview-question/413991/
+- https://leetcode.com/problems/climbing-stairs
