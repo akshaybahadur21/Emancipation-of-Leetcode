@@ -6,3 +6,4 @@
 - https://leetcode.com/problems/maximum-side-length-of-a-square-with-sum-less-than-or-equal-to-threshold/description/
 - Design distributed notification service.
 - https://leetcode.com/problems/distribute-coins-in-binary-tree
+- https://leetcode.com/problems/word-abbreviation
