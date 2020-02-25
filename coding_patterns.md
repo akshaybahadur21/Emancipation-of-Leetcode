@@ -13,7 +13,7 @@
 | Two Pointers                                       	| Link 	| Notes 	| Status 	|
 |----------------------------------------------------	|------	|-------	|--------	|
 | Pair with Target Sum (easy)                        	|<ul><li>[TwoSum](https://leetcode.com/problems/two-sum/)</li><li>[TwoSum -II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)</li></ul>|       	| :white_check_mark:    	|
-| Remove Duplicates (easy)                           	| <ul><li>[Remove Duplicates I](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)</li><li>[Remove Duplicates II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)</li><li>[Remove Duplicates from Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)</li><li>[Find Duplicate](https://leetcode.com/problems/find-the-duplicate-number/)</li><li>[Duplicate Zeros](https://leetcode.com/problems/duplicate-zeros/)</li></ul>     	|       	| :x:    	|
+| Remove Duplicates (easy)                           	| <ul><li>[Remove Duplicates I](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)</li><li>[Remove Duplicates II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)</li><li>[Remove Duplicates from Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)</li><li>[Find Duplicate](https://leetcode.com/problems/find-the-duplicate-number/)</li><li>[Duplicate Zeros](https://leetcode.com/problems/duplicate-zeros/)</li></ul>     	|       	| :white_check_mark:    	|
 | Contains Duplicate III                             	|      	|       	| :x:    	|
 | Squares of a Sorted Array (easy)                   	|      	|       	| :x:    	|
 | Triplet Sum to Zero (medium)                       	|      	|       	| :x:    	|
@@ -28,7 +28,8 @@
 | Linked List cycle detection 	|      	|       	| :x:    	|
 | Start of LinkedList Cycle   	|      	|       	| :x:    	|
 | Happy Number                	|      	|       	| :x:    	|
-| Middle of a Linked List     	|      	|       	| :x:    	|
+| Middle of a Linked List     	|   <ul><li>[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)</li></ul>   	|       	| :white_check_mark:    	|
+| Palindrome Linked List  	| <ul><li>[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)</li></ul>     	|       	| :white_check_mark:    	|
 
 
 | Merge Intervals                      	| Link 	| Notes 	| Status 	|
