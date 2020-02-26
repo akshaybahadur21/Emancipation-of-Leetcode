@@ -45,3 +45,24 @@ class Solution {
         return ans;
 }
 }
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        //add all elements to set which are non repeating.
+        //continue sliding the window and check for max
+        int i = 0, j = 0;
+        int max = 0;
+        Set<Character> lookupSet = new HashSet<>();
+        while(i<s.length() && j<s.length()){
+            if (lookupSet.contains(s.charAt(j))){
+                max = Math.max(max, lookupSet.size());
+                i++;
+                j = i;
+                lookupSet = new HashSet<>();
+            }
+            else
+                lookupSet.add(s.charAt(j++));
+        }
+        return Math.max(max, lookupSet.size());
+    }
+}
