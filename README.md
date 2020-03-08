@@ -33,6 +33,8 @@ System Design
 - [***Akshay Bahadur Notes***](https://github.com/akshaybahadur21/Leetcode/tree/master/System%20Design%20Notes)
 - [Shashank Khare](https://github.com/shashank88/system_design)
 - [System Design - Narendra L](https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV)
+- [OO Design](https://github.com/akshaybahadur21/design-patterns-for-humans)
+- [Primer](https://github.com/donnemartin/system-design-primer)
   
 Useful Playlists
   - [Tushar Roy](https://www.youtube.com/user/tusharroy2525)
