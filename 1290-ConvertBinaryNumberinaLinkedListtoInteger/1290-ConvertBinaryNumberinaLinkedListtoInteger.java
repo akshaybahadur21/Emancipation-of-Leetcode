@@ -73,3 +73,30 @@ class Solution {
         return baseTen;
     }
 }
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int getDecimalValue(ListNode head) {
+        //Approach 2
+        // traverse the list and add integer to a stack
+        // traverse stack and return int
+        
+        Stack<Integer> stack = new Stack<>();
+        while(head != null){
+            stack.push(head.val);
+            head = head.next;
+        }
+        int res = 0;
+        int count = 0;
+        while(!stack.isEmpty())
+            res += Math.pow(2, count++) * stack.pop();
+        return res;
+    }
+}
