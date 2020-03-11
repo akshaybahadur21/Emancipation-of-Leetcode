@@ -28,3 +28,4 @@
      
  ### Books
 [Grokking Algorithms](https://github.com/KevinOfNeu/ebooks/blob/master/Grokking%20Algorithms.pdf)
+[Reverse Questioning the Interviewee](https://github.com/akshaybahadur21/reverse-interview)
