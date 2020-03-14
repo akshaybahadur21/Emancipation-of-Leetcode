@@ -75,3 +75,95 @@ class LRUCache {
  * int param_1 = obj.get(key);
  * obj.put(key,value);
  */
+
+class LRUCache {
+    
+    class DNode{
+        int key;
+        int value;
+        DNode prev;
+        DNode next;
+        DNode(int key, int value){
+            this.key = key;
+            this.value = value;
+        }
+        
+        private void removeFromHead(){ //removing the least recently used
+            if (tail == this){
+                tail = null;
+                head = null;
+                return;
+            }
+            head = this.next;
+            head.prev = null;
+            
+        }
+        
+        private void update(){ //update existing entry
+            if(tail == this) return;
+            if (this != head)
+                this.prev.next = this.next;
+            else
+                head = this.next;
+            this.next.prev = this.prev;
+            this.appendToTail();
+            return;
+        }
+        
+        private void appendToTail(){ //append new entry to tail
+            if (tail == null){
+                tail = this;
+                head = this;
+                return;
+            }
+            this.next = null;
+            this.prev = tail;
+            tail.next = this;
+            tail = this;
+        }
+    }
+    
+    private Map<Integer, DNode> cache;
+    DNode tail = null;
+    DNode head = null;
+    int capacity;
+
+    public LRUCache(int capacity) {
+        cache = new HashMap<Integer, DNode>();
+        this.capacity = capacity;
+    }
+    
+    public int get(int key) {
+        if (cache.containsKey(key)){
+            DNode target = cache.get(key);
+            int val = target.value;
+            target.update();
+            return val;
+            
+        }
+        return -1;
+    }
+    
+    public void put(int key, int value) {
+        if (cache.containsKey(key)){
+            DNode target = cache.get(key);
+            target.value = value;
+            target.update();
+            return;
+        }
+        if (cache.size() == capacity){
+            cache.remove(head.key);
+            head.removeFromHead();
+        }
+        DNode target = new DNode(key, value);
+        target.appendToTail();
+        cache.put(key, target);
+    }
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
