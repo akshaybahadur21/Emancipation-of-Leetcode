@@ -35,6 +35,7 @@ System Design
 - [System Design - Narendra L](https://www.youtube.com/playlist?list=PLkQkbY7JNJuBoTemzQfjym0sqbOHt5fnV)
 - [OO Design](https://github.com/akshaybahadur21/design-patterns-for-humans)
 - [Primer](https://github.com/donnemartin/system-design-primer)
+- [Algos to know for System Design](https://github.com/resumejob/system-design-algorithms)
   
 Useful Playlists
   - [Tushar Roy](https://www.youtube.com/user/tusharroy2525)
