@@ -141,6 +141,15 @@
 | Next greater element-1                    	|      	|       	| :x:    	|
 | Next greater element-2                    	|      	|       	| :x:    	|
 
+## Misc Concepts that needs to be done
+| Miscellaneous                             	| Status 	|
+|-------------------------------------------	|--------	|
+| **Operating systems**               	          | :x:    	|
+| **Databases**                                  	| :x:    	|
+|   **Database usage 	Concepts**  - (such as ACID, BASE, CAP theorem etc.), Databases access patterns, Partitioning, Sharding, NoSQL databases (deep diving into one), Database locking and strategies, Concurrency controls, Database isolation levels, Databases transactions, Indexing, full-text search, time series databases, Views / materalized views, replication (WAN replication) etc.     	| :x:    	|
+| **Caching** -  	Caching types (L1 cache, in-memory caches, distributed caches, CDN), caching strategies (write-through, write-back etc.), cache boot strategies, Eviction strategies (LRU, MRU etc.), manual management of caches in production                    	              | :x:    	|
+| **Load balancing** - 	L3, L4, L7 load balancing, API gateway and authentication, SSL termination, request forwarding vs reverse proxy, Load balancing strategies, Direct server return, DNS load balancing, Rate limiting                   	| :x:    	|
+
 ## Notes
 - [Leetcode Patterns](https://medium.com/leetcode-patterns)
 - [System Design Primer](https://github.com/donnemartin/system-design-primer)
