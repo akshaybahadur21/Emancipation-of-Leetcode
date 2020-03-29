@@ -57,3 +57,63 @@ class Solution {
         return false;
     }
 }
+
+class Solution {
+    TrieNode root;
+    int row, col;
+    public boolean exist(char[][] board, String word) {
+        //Approach - Trie Approach
+        root = new TrieNode();
+        insertInTrie(word);
+        TrieNode curr = root;
+        row = board.length;
+        col = board[0].length;
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < col; j++){
+                char ch = board[i][j];
+                if(curr.children.containsKey(ch) && dfs(curr, board, i, j))
+                    return true;
+            }
+        }
+        return false;
+
+    }
+    private boolean dfs(TrieNode curr, char[][] board, int i, int j){
+
+        if (curr.isEnd) return curr.isEnd;
+        if(i < 0 || j <0 || i>= row || j >= col || !curr.children.containsKey(board[i][j])) return false;
+        char ch = board[i][j];
+        char temp = board[i][j];
+        board[i][j] = ' ';
+
+        if (dfs(curr.children.get(ch), board, i+1, j) || dfs(curr.children.get(ch), board, i-1, j)
+                || dfs(curr.children.get(ch), board, i, j+1) || dfs(curr.children.get(ch), board, i, j-1))
+            return true;
+
+        board[i][j] = temp;
+        return false;
+
+    }
+    private void insertInTrie(String word){
+        TrieNode curr = root;
+        for (int i = 0; i<word.length(); i++){
+            char c = word.charAt(i);
+            if (curr.children.containsKey(c)) {
+                curr = curr.children.get(c);
+                continue;
+            }
+            curr.children.put(c,new TrieNode());
+            curr = curr.children.get(c);
+        }
+        curr.isEnd = true;
+    }
+}
+    
+class TrieNode{
+    Map<Character, TrieNode> children;
+    boolean isEnd;
+    TrieNode(){
+        children = new HashMap<>();
+        isEnd = false;
+    }
+}
