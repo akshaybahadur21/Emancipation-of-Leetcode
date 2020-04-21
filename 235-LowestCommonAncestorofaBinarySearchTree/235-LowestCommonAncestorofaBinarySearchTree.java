@@ -29,14 +29,25 @@ Note:
     p and q are different and both values will exist in the BST.
 
 */
-
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root.val > p.val && root.val > q.val)
-            return lowestCommonAncestor(root.left, p, q);
-        else if (root.val < p.val && root.val < q.val)
-             return lowestCommonAncestor(root.right, p, q);
-        else
+        return dfs (root, p, q);
+    }
+    
+    private TreeNode dfs(TreeNode root, TreeNode p, TreeNode q){
+        if ( root == null)
+            return null;
+        if (root.val == p.val || root.val == q.val)
             return root;
+        
+        TreeNode left = dfs(root.left, p , q);
+        TreeNode right = dfs(root.right, p, q);
+        
+        if (left == null && right == null)
+            return null;
+        if (left != null && right != null)
+            return root;
+        
+        return left == null?right:left;
     }
 }
