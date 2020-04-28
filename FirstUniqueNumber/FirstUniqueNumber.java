@@ -81,57 +81,43 @@ class FirstUnique {
         }
     }
     
-    DNode head = null;
-    DNode tail = null;
+    DNode head = new DNode(0);
+    DNode tail = new DNode(0);
     Map<Integer, DNode> map = new HashMap<>();
+    int nodes = 0;
     public FirstUnique(int[] nums) {
+        head.next = tail;
+        tail.prev = head;
         for(int i = 0; i < nums.length; i++)
             add(nums[i]);
     }
     
     public void appendToTail(DNode node){ //append new entry to tail
-            if (tail == null){
-                tail = node;
-                head = node;
-                return;
-            }
-            node.next = null;
-            node.prev = tail;
-            tail.next = node;
-            tail = node;
+        DNode prev = tail.prev;
+        prev.next = node;
+        node.prev = prev;
+        node.next = tail;
+        tail.prev = node;
         }
-        public void deleteDNode(DNode node){ //removing the least recently used
-            
+    
+    public void deleteDNode(DNode node){ //removing the least recently used
         DNode next = node.next;
         DNode prev = node.prev;
-        if (prev != null && next != null) {
-            prev.next = next;
-            next.prev = prev;
-            node.next = null;
-            node.prev = null;
-            return;
-            }
-            
-            if (tail == node){
-                tail = null;
-                head = null;
-                return;
-            }
-            if (head == node){
-                DNode temp = head;
-                head = head.next;
-                head.prev = null;
-                temp.next = null;
-            }
+            if (prev != null && next != null) {
+                prev.next = next;
+                next.prev = prev;
+                node.next = null;
+                node.prev = null;
+                nodes--;
+            }       
         }
     
     public int showFirstUnique() {
-        if(tail == null) return -1;
+        if(nodes == 0) return -1;
         return head.next.val;
     }
     
     public void add(int value) {
-        System.out.println(value);
         if (map.containsKey(value)){
             deleteDNode(map.get(value));
         }
@@ -139,6 +125,7 @@ class FirstUnique {
             DNode node = new DNode(value);
             map.put(value, node);
             appendToTail(node);
+            nodes++;
         }
     }
 }
@@ -149,5 +136,3 @@ class FirstUnique {
  * int param_1 = obj.showFirstUnique();
  * obj.add(value);
  */
- 
- 
