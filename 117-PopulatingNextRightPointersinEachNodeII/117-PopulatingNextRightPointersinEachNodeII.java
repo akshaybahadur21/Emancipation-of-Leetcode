@@ -107,3 +107,25 @@ class Solution {
         return root;
     }
 }
+
+class Solution {
+    public Node connect(Node root) {
+        if (root == null) return root;
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            int len = q.size();
+            for (int i = 0 ; i < len; i++){
+                Node temp = q.poll();
+                if(i != len - 1)
+                    temp.next = q.peek();
+                else
+                    temp.next = null;
+                if(temp.left != null) q.add(temp.left);
+                if(temp.right != null) q.add(temp.right);
+            }
+        }
+        return root;
+        
+    }
+}
