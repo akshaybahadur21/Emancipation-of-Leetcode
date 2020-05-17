@@ -51,3 +51,32 @@ class Solution {
         return list;
     }
 }
+
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> resList = new ArrayList<>();
+        if(p.length() > s.length() || s == null || s.length() == 0) return resList;
+        int[] map = new int[26];
+        for(char c : p.toCharArray())
+            map[c - 'a']++;
+        int left = 0;
+        int right = 0;
+        int count = p.length();
+        while (right < s.length()){
+            if(map[s.charAt(right) - 'a'] >= 1)
+                count--;
+            map[s.charAt(right) - 'a']--;
+            if(right - left == p.length() - 1){
+                if(count == 0)
+                    resList.add(left);
+                if(map[s.charAt(left) - 'a'] >= 0)
+                    count++;
+                map[s.charAt(left) - 'a']++;
+                left++;
+            }
+            right++;
+        }
+        return resList;
+        
+    }
+}
