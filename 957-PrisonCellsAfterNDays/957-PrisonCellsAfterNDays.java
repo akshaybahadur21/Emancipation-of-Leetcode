@@ -59,3 +59,37 @@ class Solution {
       return cells;  
     }
 }
+
+class Solution {
+    public int[] prisonAfterNDays(int[] cells, int N) {
+        if(cells == null || cells.length == 0 || N <= 0) return cells;
+        Set<String> set = new HashSet<>();
+        boolean hasCycle = false;
+        int days = 0;
+        for(int i = 0; i < N; i++){
+            int next[] = getNextDay(cells);
+            String key = Arrays.toString(next);
+            if(set.contains(key)){
+                hasCycle = true;
+                break;
+            }
+            else{
+                set.add(key);
+                days++;
+            }
+            cells = next;
+        }
+        if(hasCycle){
+            N = N % days;
+            for(int i = 0; i < N; i++)
+                cells = getNextDay(cells);
+        }
+        return cells;
+    }
+    private int[] getNextDay(int[] cells){
+        int[] res = new int[cells.length];
+        for(int i = 1; i < cells.length - 1; i++)
+            res[i] = cells[i - 1] == cells[i + 1] ? 1 : 0;
+        return res;
+    }
+}
