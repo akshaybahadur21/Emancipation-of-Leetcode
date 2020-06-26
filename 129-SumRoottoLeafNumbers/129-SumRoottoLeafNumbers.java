@@ -114,3 +114,24 @@ class Solution {
         }
     }
 }
+
+class Solution {
+    public int sumNumbers(TreeNode root) {
+        int[] sum = new int[1];
+        dfs(root, new StringBuilder(), sum);
+        return sum[0];
+    }
+    private void dfs(TreeNode node, StringBuilder sb, int[] sum){
+        if(node == null) return;
+        if(node.left == null && node.right == null){
+            sb.append(node.val);
+            sum[0] += Integer.valueOf(sb.toString());
+            sb.deleteCharAt(sb.length() - 1);
+            return;
+        }
+        sb.append(node.val);
+        dfs(node.left, sb, sum);
+        dfs(node.right, sb, sum);
+        sb.deleteCharAt(sb.length() - 1);
+    }
+}
