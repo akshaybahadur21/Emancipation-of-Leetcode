@@ -44,3 +44,32 @@ class Solution {
         return new ArrayList<>(resSet);
     }
 }
+
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        Set<List<Integer>> resList = new HashSet<>();
+        if(!validateInput(nums)) return new ArrayList<>();
+        Arrays.sort(nums);
+        dfs(nums, resList, 0, new ArrayList<>(), 0);
+        return new ArrayList<>(resList);
+    }
+    private void dfs(int[] nums, Set<List<Integer>> resList, int currSum, List<Integer> list, int idx){
+        if(currSum == 0){
+            if(list.size() == 3 && !resList.contains(list))
+                resList.add(new ArrayList<>(list));
+        }
+        if(currSum > 0 || list.size() > 3) return;
+        for(int i = idx; i < nums.length; i++){
+            currSum += nums[i];
+            list.add(nums[i]);
+            dfs(nums, resList, currSum, list, ++idx);
+            list.remove(list.size() - 1);
+            currSum -= nums[i];
+        }
+    }
+    private boolean validateInput(int[] nums){
+        if(nums == null || nums.length < 3)
+            return false;
+        return true;
+    }
+}
