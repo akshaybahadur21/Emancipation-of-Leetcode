@@ -55,3 +55,71 @@ class CoinChange {
   }
 }
 
+class CoinChange {
+
+  public int countChange(int[] denominations, int total)
+  {
+    Integer[][] dp = new Integer[denominations.length][total + 1];
+    return this.countChangeRecursive(dp, denominations, total, 0);
+  }
+
+  private int countChangeRecursive(Integer[][] cache, int[] denominations, int total, int idx)
+  {
+    if(idx >= denominations.length || total < 0 || denominations.length == 0) return 0;
+    if(total == 0) return 1;
+    if (cache[idx][total] != null) return cache[idx][total];
+    int sum1 = 0;
+    if (cache[idx][total] == null){
+      if(total >= denominations[idx])
+        sum1 = countChangeRecursive(cache, denominations, total - denominations[idx], idx);
+    }
+    int sum2 = countChangeRecursive(cache, denominations, total , idx + 1);
+    cache[idx][total] = sum1 + sum2;
+    return cache[idx][total];
+  }
+
+  public static void main(String[] args) {
+    CoinChange cc = new CoinChange();
+    int[] denominations = {1, 2, 3};
+    System.out.println(cc.countChange(denominations, 5));
+  }
+}
+
+/*
+
+Bottom-up Dynamic Programming #
+We will try to find if we can make all possible sums, with every combination of coins, to populate the array dp[TotalDenominations][Total+1].
+
+So for every possible total ‘t’ (0<= t <= Total) and for every possible coin index (0 <= index < denominations.length), we have two options:
+
+Exclude the coin. Count all the coin combinations without the given coin up to the total ‘t’ => dp[index-1][t]
+Include the coin if its value is not more than ‘t’. In this case, we will count all the coin combinations to get the remaining total: dp[index][t-denominations[index]]
+Finally, to find the total combinations, we will add both the above two values:
+
+    dp[index][t] = dp[index-1][t] + dp[index][t-denominations[index]]
+
+*/
+
+class CoinChange {
+
+  public int countChange(int[] denominations, int total) {
+    int[][] dp = new int[denominations.length][total + 1];
+    for(int i = 0; i < denominations.length; i++)
+      dp[i][0] = 1;
+    for(int i = 0; i < denominations.length; i++){
+      for(int t = 1; t <= total; t++){
+        if(i > 0)
+          dp[i][t] = dp[i - 1][t];
+        if(t >= denominations[i])
+          dp[i][t] += dp[i][t - denominations[i]];
+      }
+    }
+    return dp[denominations.length - 1][total];
+  }
+
+  public static void main(String[] args) {
+    CoinChange cc = new CoinChange();
+    int[] denominations = {1, 2, 3};
+    System.out.println(cc.countChange(denominations, 5));
+  }
+}
