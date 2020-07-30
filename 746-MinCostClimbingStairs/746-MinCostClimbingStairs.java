@@ -44,3 +44,18 @@ class Solution {
         return Math.min(res[cost.length-1], res[cost.length-2]);
     }
 }
+
+class Solution {
+    public int minCostClimbingStairs(int[] cost) {
+        Integer[] cache = new Integer[cost.length];
+        return Math.min(dfs(cache, cost, 0), dfs(cache, cost,1));
+    }
+    private int dfs(Integer[] cache, int[] cost, int idx){
+        if(idx > cost.length - 1) return 0;
+        if(cache[idx] != null) return cache[idx];
+        int OneStep = dfs(cache, cost, idx + 1);
+        int twoStep = dfs(cache, cost, idx + 2);
+        cache[idx] = Math.min(OneStep, twoStep) + cost[idx];
+        return cache[idx];
+    }
+}
