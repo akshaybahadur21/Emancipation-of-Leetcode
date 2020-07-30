@@ -47,3 +47,30 @@ class Solution {
         
     }
 }
+
+class Solution {
+    public int rob(int[] nums) {
+        return dfs(nums, 0);
+    }
+    private int dfs(int[] nums, int idx){
+        if(idx >= nums.length) return 0;
+        int steal = nums[idx] + dfs(nums, idx + 2);
+        int skip = dfs(nums, idx + 1);
+        return Math.max(steal, skip);
+    }
+}
+
+class Solution {
+    public int rob(int[] nums) {
+        Integer[] cache = new Integer[nums.length];
+        return dfs(nums, 0, cache);
+    }
+    private int dfs(int[] nums, int idx, Integer[] cache){
+        if(idx >= nums.length) return 0;
+        if(cache[idx] != null) return cache[idx];
+        int steal = nums[idx] + dfs(nums, idx + 2, cache);
+        int skip = dfs(nums, idx + 1, cache);
+        cache[idx] = Math.max(steal, skip);
+        return cache[idx];
+    }
+}
