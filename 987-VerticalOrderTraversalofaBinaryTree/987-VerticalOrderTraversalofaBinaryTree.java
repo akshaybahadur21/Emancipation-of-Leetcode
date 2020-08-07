@@ -154,3 +154,40 @@ class Solution {
         dfs(root.right, x + 1, y + 1, map);
     }
 }
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> verticalTraversal(TreeNode root) {
+        Map<Integer, PriorityQueue<int[]>> map = new TreeMap<>();
+        dfs(root, 0, 0, map);
+        List<List<Integer>> resList = new ArrayList<>();
+        for(Map.Entry<Integer, PriorityQueue<int[]>> entry : map.entrySet()){
+            resList.add(new ArrayList<>());
+            PriorityQueue<int[]> nodes = entry.getValue();
+                while (!nodes.isEmpty()) 
+                    resList.get(resList.size() - 1).add(nodes.poll()[0]);
+        }
+        return resList;
+    }
+    private void dfs(TreeNode node, int x, int y, Map<Integer, PriorityQueue<int[]>> map){
+        if(node == null) return;
+        dfs(node.left, x - 1, y - 1, map);
+        if(!map.containsKey(x)) map.put(x, new PriorityQueue<>((n1, n2) -> n1[1] == n2[1] ? n1[0] - n2[0] : n2[1] - n1[1]));
+        map.get(x).add(new int[]{node.val, y});
+        dfs(node.right, x + 1, y - 1, map);
+    }
+}
