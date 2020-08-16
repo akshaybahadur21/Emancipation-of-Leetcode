@@ -31,6 +31,25 @@ There are two ways to reach the bottom-right corner:
 */
 
 class Solution {
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        if(!validateInput(obstacleGrid)) return 0;
+        Integer[][] cache = new Integer[obstacleGrid.length][obstacleGrid[0].length];
+        return dfs(obstacleGrid, cache, 0, 0);
+    }
+    private int dfs(int[][] grid, Integer[][] cache, int i, int j){
+        if(i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] != 0) return 0;
+        if(i == grid.length - 1 && j == grid[0].length - 1) return 1;
+        if(cache[i][j] != null) return cache[i][j];
+        cache[i][j] = dfs(grid, cache, i + 1, j) + dfs(grid, cache, i, j + 1);
+        return cache[i][j];
+    }
+    private boolean validateInput(int[][] grid) {
+        if(grid == null || grid.length == 0 ||  grid.length == 1 && grid[0].length == 1 && grid[0][0] != 0) return false;
+        return true;
+    }
+}
+
+class Solution {
     int res = 0;
     int row;
     int col;
