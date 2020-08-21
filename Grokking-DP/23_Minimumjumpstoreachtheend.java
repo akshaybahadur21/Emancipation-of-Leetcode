@@ -58,7 +58,7 @@ class ArrayJump {
     int start = idx + 1, end = idx + jumps[idx];
     for(int i = start; i <= end && i < jumps.length; i++){
       int min = countMinJumpsRecursive(cache, jumps, i);
-      total = min == Integer.MAX_VALUE ? Integer.MAX_VALUE : min + 1;
+      total = min == Integer.MAX_VALUE ? Integer.MAX_VALUE : Math.min(total, min + 1);
       cache[idx] = total;
     }
     return cache[idx];
