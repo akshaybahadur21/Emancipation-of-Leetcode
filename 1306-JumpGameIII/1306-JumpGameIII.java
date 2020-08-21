@@ -56,3 +56,18 @@ class Solution {
     }
 }
 
+class Solution {
+    public boolean canReach(int[] arr, int start) {
+       Boolean[] cache = new Boolean[arr.length];
+        return dfs(cache, arr, start);
+    }
+    private boolean dfs(Boolean[] cache, int[] arr, int idx){
+        if(idx >= arr.length || idx < 0) return false;
+        if(arr[idx] == 0) return true;
+        if(cache[idx] != null) return cache[idx];
+        cache[idx] = false;
+        cache[idx] = dfs(cache, arr, idx + arr[idx]) || dfs(cache, arr, idx - arr[idx]);
+        return cache[idx];  
+    }
+}
+
