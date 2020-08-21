@@ -52,3 +52,23 @@ class Solution {
         return res;
     }
 }
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        return dfs(root, p);
+    }
+    private TreeNode dfs(TreeNode node, TreeNode p){
+        if(node == null) return node;
+        if(node.val <= p.val) return dfs(node.right, p);
+        TreeNode left = dfs(node.left, p);
+        return left != null ? left : node;
+    }
+}
