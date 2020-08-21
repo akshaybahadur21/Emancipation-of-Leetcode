@@ -61,3 +61,10 @@ class Solution {
             s.pop().printValue();
     }
 }
+
+class Solution {
+    public void printLinkedListInReverse(ImmutableListNode head) {
+        if(head.getNext() != null) printLinkedListInReverse(head.getNext());
+        head.printValue();
+    }
+}
