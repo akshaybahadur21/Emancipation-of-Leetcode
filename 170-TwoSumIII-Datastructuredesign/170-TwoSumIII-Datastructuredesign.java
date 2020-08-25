@@ -52,3 +52,36 @@ class TwoSum {
  * obj.add(number);
  * boolean param_2 = obj.find(value);
  */
+
+class TwoSum {
+
+    /** Initialize your data structure here. */
+    List<Integer> list;
+    public TwoSum() {
+        this.list = new ArrayList<>();
+    }
+    
+    /** Add the number to an internal data structure.. */
+    public void add(int number) {
+        list.add(number);
+    }
+    
+    /** Find if there exists any pair of numbers which sum is equal to the value. */
+    public boolean find(int value) {
+        Collections.sort(list);
+        int lo = 0, hi = list.size() - 1;
+        while(lo < hi){
+            if(list.get(lo) + list.get(hi) == value) return true;
+            if(list.get(lo) + list.get(hi) > value) hi--;
+            else lo++;
+        }
+        return false;
+    }
+}
+
+/**
+ * Your TwoSum object will be instantiated and called as such:
+ * TwoSum obj = new TwoSum();
+ * obj.add(number);
+ * boolean param_2 = obj.find(value);
+ */
