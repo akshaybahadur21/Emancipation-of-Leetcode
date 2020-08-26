@@ -34,6 +34,27 @@ class Solution {
     }
     private int dfs(Integer[] cache, String s, int idx){
         if(idx == s.length()) return 1;
+        if(cache[idx] != null) return cache[idx];
+        int ans = 0;
+        int c1 = Character.getNumericValue(s.charAt(idx));
+        if(c1 >= 1) ans = dfs(cache, s, idx + 1);
+        if(idx + 1 < s.length()){
+            int c2 = Character.getNumericValue(s.charAt(idx + 1));
+            if(c1 == 1 || c1 == 2 && c2 <= 6) ans += dfs(cache, s, idx + 2);
+        }
+        cache[idx] = ans;
+        return cache[idx];
+    }
+}
+
+class Solution {
+    public int numDecodings(String s) {
+       if(s == null || s.length() == 0 || s.equals("0")) return 0;
+        Integer[] cache = new Integer[s.length()];
+        return dfs(cache, s, 0);
+    }
+    private int dfs(Integer[] cache, String s, int idx){
+        if(idx == s.length()) return 1;
         if(s.charAt(idx) == '0') return 0;
         if(idx == s.length() - 1) return 1;
         if(cache[idx] != null) return cache[idx];
