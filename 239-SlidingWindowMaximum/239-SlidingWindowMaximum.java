@@ -29,6 +29,27 @@ Could you solve it in linear time?
 */
 
 class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int[] res = new int[nums.length - k + 1];
+        if(!validateInput(nums, k)) return res;
+           Queue<Integer> heap = new PriorityQueue<>((n1, n2) -> n2 - n1);
+        for(int i = 0; i < k; i++) heap.add(nums[i]);
+        int count = 0;
+        res[count++] = heap.peek();
+        for(int i = k; i < nums.length; i++){
+            heap.remove(nums[i - k]);
+            heap.add(nums[i]);
+            res[count++] = heap.peek();
+        }
+        return res;
+    }
+    private boolean validateInput(int[] nums, int k) {
+        if(nums == null || nums.length == 0 || k > nums.length) return false;
+        return true;
+    }
+}
+
+class Solution {
 //Currently O(n * k)
 //need to optimize for O(n)
     public int[] maxSlidingWindow(int[] nums, int k) {
