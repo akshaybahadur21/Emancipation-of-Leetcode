@@ -47,6 +47,42 @@ Note:
 */
 
 class Solution {
+    int empty = 0;
+    public int uniquePathsIII(int[][] grid) {
+        int x = -1, y = -1;
+        boolean[][] vis = new boolean[grid.length][grid[0].length];
+        for(int i = 0; i < grid.length; i++){
+            for(int j = 0; j < grid[0].length; j++){
+                if(grid[i][j] == 0) empty++;
+                else if(grid[i][j] == 1) {
+                    x = i;
+                    y = j;
+                }
+            }
+        }
+        return dfs(grid, x, y, vis);
+    }
+    private int dfs(int[][] grid, int i, int j, boolean[][] vis){
+        if(i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || vis[i][j] || grid[i][j] == -1) return 0;
+        if(grid[i][j] == 2){
+            if(empty == 0) return 1;
+            else return 0;
+        }
+        int res = 0;
+        vis[i][j] = true;
+        if (grid[i][j] == 0) empty--;
+        res += dfs(grid, i + 1, j , vis);
+        res += dfs(grid, i - 1, j , vis);
+        res += dfs(grid, i , j + 1, vis);
+        res += dfs(grid, i , j - 1, vis);
+        if (grid[i][j] == 0) empty++;
+        vis[i][j] = false;
+        return res;
+    }
+}
+
+
+class Solution {
     int res;
     int row;
     int col;
