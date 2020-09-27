@@ -31,6 +31,28 @@ Note:
 
 */
 
+
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        if(!validateInput(nums1, nums2)) return new int[]{};
+        Map<Integer, Integer> map = new HashMap<>();
+        Stack<Integer> s = new Stack<>();
+        int[] res = new int[nums1.length];
+        for(int i = 0; i < nums2.length; i++){
+            while(!s.isEmpty() && nums2[i] > s.peek())
+                map.put(s.pop(), nums2[i]);
+            s.push(nums2[i]);
+         }
+        while(!s.isEmpty()) map.put(s.pop(), - 1);
+        for(int i = 0; i < nums1.length; i++) res[i] = map.containsKey(nums1[i]) ? map.get(nums1[i]) : -1;
+        return res;
+    }
+    private boolean validateInput(int[] nums1, int[] nums2) {
+        if(nums1 == null || nums1.length == 0 ) return false;
+        return true;
+    }    
+}
+
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         if(nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) return new int[]{};
