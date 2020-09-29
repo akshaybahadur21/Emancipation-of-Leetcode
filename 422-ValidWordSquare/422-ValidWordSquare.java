@@ -77,6 +77,24 @@ Therefore, it is NOT a valid word square.
 
 class Solution {
     public boolean validWordSquare(List<String> words) {
+        try{
+            for(int i = 0; i < words.size(); i++){
+                String str = words.get(i);
+                for(int j = 0; j < str.length(); j++){
+                    if(i == j) continue;
+                    if(words.get(i).charAt(j) != words.get(j).charAt(i)) return false;
+                }
+            }
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+}
+
+class Solution {
+    public boolean validWordSquare(List<String> words) {
         for(int i = 0; i < words.size(); i++){
             String str = words.get(i);
             for(int j = 0; j < str.length(); j++){
