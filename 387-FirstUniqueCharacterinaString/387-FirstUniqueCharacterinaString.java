@@ -19,6 +19,20 @@ Link : https://leetcode.com/problems/first-unique-character-in-a-string/
 
 */
 
+class Solution {
+    public int firstUniqChar(String s) {
+    Map<Character, int[]> map = new LinkedHashMap<>();
+        for(int i = 0; i < s.length(); i++){
+            char ch = s.charAt(i);
+            if(map.containsKey(ch)) map.put(ch, new int[]{map.get(ch)[0] + 1, map.get(ch)[1]});
+            else map.put(ch, new int[]{1, i});
+        }
+        for(Map.Entry<Character, int[]> entry : map.entrySet()){
+            if(entry.getValue()[0] == 1) return entry.getValue()[1];
+        }
+        return -1;
+    }
+}
 
 public class Solution {
     public int firstUniqChar(String s) {
