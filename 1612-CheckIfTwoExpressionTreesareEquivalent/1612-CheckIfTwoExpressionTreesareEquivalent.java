@@ -55,6 +55,47 @@ class Solution {
     public boolean checkEquivalence(Node root1, Node root2) {
         Map<Character,Integer> map = new HashMap<>();
         fillMap(root1, map);
+        return checkMap(root2, map);
+    }
+    
+    private boolean checkMap(Node node, Map<Character,Integer> map){
+        if(node == null) return true;
+        if(node.val != '+'){
+            if(!map.containsKey(node.val) || map.get(node.val) < 0) return false;
+            map.put(node.val, map.get(node.val) - 1);
+            if(map.get(node.val) < 0) return false;
+        }
+        return checkMap(node.left, map) && checkMap(node.right, map);
+    }
+    
+    private void fillMap(Node node, Map<Character,Integer> map){
+        if(node == null) return;
+        if(node.val != '+')
+            map.put(node.val, map.containsKey(node.val) ? map.get(node.val) + 1 : 1);
+        fillMap(node.left, map);
+        fillMap(node.right, map);
+    }
+}
+
+/**
+ * Definition for a binary tree node.
+ * class Node {
+ *     char val;
+ *     Node left;
+ *     Node right;
+ *     Node() {this.val = ' ';}
+ *     Node(char val) { this.val = val; }
+ *     Node(char val, Node left, Node right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean checkEquivalence(Node root1, Node root2) {
+        Map<Character,Integer> map = new HashMap<>();
+        fillMap(root1, map);
         boolean[] res = new boolean[]{true};
         checkMap(root2, map, res);
         return res[0];
