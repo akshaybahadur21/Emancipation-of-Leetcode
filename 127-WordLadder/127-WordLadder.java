@@ -40,6 +40,51 @@ Output: 0
 Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 
 */
+
+class Solution {
+    //bidirectional bfs
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Set<String> wordSet = new HashSet<>(wordList);
+        if(!validateInput(beginWord, endWord, wordSet)) return 0;
+        Set<String> beginSet = new HashSet<>(), endSet = new HashSet<>(), vis = new HashSet<>();
+        beginSet.add(beginWord);
+        endSet.add(endWord);
+        int res = 1;
+        while(!beginSet.isEmpty() && !endSet.isEmpty()){
+            //we want to work with the smaller of the 2 sets
+            if(beginSet.size() > endSet.size()){
+                Set<String> set = beginSet;
+                beginSet = endSet;
+                endSet = set;
+            }
+            Set<String> temp = new HashSet<>();
+            for(String str : beginSet){
+                char[] chArr = str.toCharArray();
+                for(int i = 0; i < chArr.length; i++){
+                    char ch = chArr[i];
+                    for(char a = 'a'; a <= 'z'; a++){
+                        chArr[i] = a;
+                        String target = String.valueOf(chArr);
+                        if(endSet.contains(target)) return res + 1;
+                        if(!vis.contains(target) && wordSet.contains(target)){
+                            vis.add(target);
+                            temp.add(target);
+                        }
+                    }
+                    chArr[i] = ch;
+                }
+            }
+            beginSet = temp;
+            res++;
+        }
+        return 0;
+    }
+    private boolean validateInput(String beginWord, String endWord, Set<String> wordSet) {
+        if(beginWord == null || endWord == null || !wordSet.contains(endWord)) return false;
+        return true;
+    }
+}
+
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         if (!validateInput(beginWord, endWord, wordList)) return 0;
