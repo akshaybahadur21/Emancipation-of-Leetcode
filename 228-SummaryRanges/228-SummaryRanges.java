@@ -58,10 +58,6 @@ class Solution {
     public List<String> summaryRanges(int[] nums) {
         List<String> resList = new ArrayList<>();
         if(nums == null || nums.length == 0) return resList;
-        if(nums.length == 1) {
-            resList.add(String.valueOf(nums[0]));
-            return resList;
-        }
         int prev = 0;
         for(int i = 1; i < nums.length; i++){
         if(nums[i] - nums[i - 1] == 1) continue;
