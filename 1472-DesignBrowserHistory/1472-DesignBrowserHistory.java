@@ -81,3 +81,42 @@ class BrowserHistory {
         return curr.url;
     }
 }
+
+class BrowserHistory {
+
+    Stack<String> curr;
+    Stack<String> hist;
+    public BrowserHistory(String homepage) {
+        this.curr = new Stack<>();
+        curr.push(homepage);
+        this.hist = new Stack<>();
+    }
+    
+    public void visit(String url) {
+        curr.push(url);
+        this.hist = new Stack<>();
+    }
+    
+    public String back(int steps) {
+        steps = steps >= curr.size() ? curr.size() - 1 : steps;
+        for(int i = 0; i < steps; i++)
+            hist.push(curr.pop());
+        return curr.peek();
+        
+    }
+    
+    public String forward(int steps) {
+        steps = steps >= hist.size() ? hist.size() : steps;
+        for(int i = 0; i < steps; i++)
+            curr.push(hist.pop());
+        return curr.peek();
+    }
+}
+
+/**
+ * Your BrowserHistory object will be instantiated and called as such:
+ * BrowserHistory obj = new BrowserHistory(homepage);
+ * obj.visit(url);
+ * String param_2 = obj.back(steps);
+ * String param_3 = obj.forward(steps);
+ */
