@@ -82,3 +82,40 @@ class UndergroundSystem {
         return (double) checkout.getKey() / checkout.getValue();
     }
 }
+
+class UndergroundSystem {
+    Map<String, Double> avgTime;
+    Map<String, Double> totalOccurances;
+    Map<Integer, String> check;
+    public UndergroundSystem() {
+        this.avgTime = new HashMap<>();
+        this.check = new HashMap<>();
+        this.totalOccurances = new HashMap<>();
+    }
+    
+    public void checkIn(int id, String stationName, int t) {
+        check.put(id, stationName +"@"+ String.valueOf(t));
+    }
+    
+    public void checkOut(int id, String stationName, int t) {
+        int departTime = Integer.valueOf(check.get(id).split("@")[1]);
+        String depart_statn = check.get(id).split("@")[0];
+        String key = depart_statn + "_" + stationName;
+        if(avgTime.containsKey(key)){
+            totalOccurances.put(key, totalOccurances.get(key) + 1);
+            double prev = avgTime.get(key);
+            double curr = Double.valueOf(t - departTime);
+            double avg = (prev + curr);
+            avgTime.put(key, avg);
+        }
+        else {
+            avgTime.put(key, Double.valueOf(t - departTime));
+            totalOccurances.put(key, 1.0);
+        }
+    }
+    
+    public double getAverageTime(String startStation, String endStation) {
+        String key = startStation + "_" + endStation;
+        return avgTime.get(key) / totalOccurances.get(key);
+    }
+}
