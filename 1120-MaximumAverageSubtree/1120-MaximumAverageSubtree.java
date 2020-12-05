@@ -59,3 +59,30 @@ class Solution {
         return new int[]{sum, num};
     }
 }
+
+class Solution {
+    public double maximumAverageSubtree(TreeNode root) {
+        double[] res = new double[]{0.0};
+        dfs(root, res);
+        return res[0];
+    }
+    private double dfs(TreeNode node, double[] res){
+        if(node == null) return -1.0;
+        if(node.left == null && node.right == null) return Double.valueOf(node.val);
+        double den = 3.0;
+        double left = dfs(node.left, res);
+        if(left == -1.0){
+            den--;
+            left = 0.0;
+        }
+        double right = dfs(node.right, res);
+        if(right == -1.0){
+            den--;
+            right = 0.0;
+        }
+        int node_val = node.val;
+        double val = (left + right + Double.valueOf(node.val)) / den;
+        res[0] = Math.max(res[0], Math.max(Math.max(left, right), val));
+        return Math.floor(val);
+    }
+}
