@@ -39,6 +39,19 @@ Link : https://leetcode.com/problems/range-sum-of-bst/
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+class Solution {
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        return dfs(root, low, high);
+    }
+    private int dfs(TreeNode node, int lo, int hi){
+        if(node == null) return 0;
+        if(node.val >= lo && node.val <= hi) return node.val + dfs(node.left, lo, hi) + dfs(node.right, lo, hi);
+        if(node.val < lo) return dfs(node.right, lo, hi);
+        else return dfs(node.left, lo, hi);
+    }
+}
+
  
  //Unoptimized
  // One optimization is to only go left or right if you know that the value will be in that range.
