@@ -29,6 +29,45 @@ Link : https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
  *     ListNode(int x) { val = x; }
  * }
  */
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        Map<Integer, Integer> lookupMap = new LinkedHashMap<>();
+        ListNode temp=head;
+        ListNode newHead = new ListNode(0);
+        while(temp!=null){
+            lookupMap.put(temp.val, lookupMap.containsKey(temp.val) ? lookupMap.get(temp.val) + 1 : 1);
+            temp = temp.next;
+        }
+        temp = newHead;
+        for (Map.Entry<Integer, Integer> entry : lookupMap.entrySet()) {
+            if(entry.getValue() == 1){
+                temp.next = new ListNode(entry.getKey());
+                temp = temp.next;
+            }  
+        }
+        return newHead.next;
+    }
+}
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode newHead = new ListNode(-101);
+        newHead.next = head;
+        ListNode prev = newHead;
+        while(head != null){
+            if(head.next != null && head.val == head.next.val){
+                while(head.next != null && head.val == head.next.val)
+                    head = head.next;
+                prev.next = head.next;
+            }
+            else prev = prev.next;
+            head = head.next;
+        }
+        return newHead.next;
+    }
+}
+
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         
