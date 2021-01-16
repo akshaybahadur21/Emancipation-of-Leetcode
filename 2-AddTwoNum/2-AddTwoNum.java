@@ -14,7 +14,29 @@ Question : https://leetcode.com/problems/add-two-numbers/
 
 */
 
-
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // Use new Node for adding each node in the lists.
+        // return node
+        ListNode newHead = new ListNode(0);
+        ListNode temp = newHead;
+        int carry = 0;
+        while(l1 != null || l2 != null){
+            int l1Val = l1 == null ? 0 : l1.val;
+            int l2Val = l2 == null ? 0 : l2.val;
+            int sum = l1Val + l2Val + carry;
+            carry = sum / 10;
+            sum = sum % 10;
+            temp.next = new ListNode(sum);
+            temp = temp.next;
+            if(l1 != null) l1 = l1.next;
+            if(l2 != null) l2 = l2.next;
+            
+        }
+        if(carry != 0) temp.next = new ListNode(carry);
+        return newHead.next;
+    }
+}
 
 /**
  * Definition for singly-linked list.
