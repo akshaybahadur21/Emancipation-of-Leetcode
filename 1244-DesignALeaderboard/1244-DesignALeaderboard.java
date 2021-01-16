@@ -41,6 +41,31 @@ Constraints:
 
 */
 
+class Leaderboard {
+    Map<Integer, Integer> map;
+    public Leaderboard() {
+        this.map = new HashMap<>();
+    }
+    
+    public void addScore(int playerId, int score) {
+        map.put(playerId, map.containsKey(playerId) ? map.get(playerId) + score : score);
+    }
+    
+    public int top(int K) {
+        int sum = 0;
+        Queue<Integer> heap = new PriorityQueue<>((n1, n2) -> n1 - n2);
+        for(int n : map.values()){
+            heap.add(n);
+            if(heap.size() > K) heap.poll();
+        }
+        while(!heap.isEmpty()) sum += heap.poll();
+        return sum;
+    }
+    
+    public void reset(int playerId) {
+        map.remove(playerId);
+    }
+}
 
 class Leaderboard {
     Map<Integer, Integer> map;
