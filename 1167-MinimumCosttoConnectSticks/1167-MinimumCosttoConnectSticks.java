@@ -45,3 +45,20 @@ class Solution {
         return val + heap.poll() + heap.poll();
     }
 }
+
+class Solution {
+    public int connectSticks(int[] sticks) {
+        //use min heap
+        Queue<Integer> heap = new PriorityQueue<>((n1, n2) -> n1 - n2);
+        for(int s : sticks) heap.add(s);
+        int sum = 0;
+        while(!heap.isEmpty()){
+            int first = heap.poll();
+            if(heap.isEmpty()) break;
+            int second = heap.poll();
+            sum += first + second;
+            heap.add(first + second);
+        }
+        return sum;
+    }
+}
