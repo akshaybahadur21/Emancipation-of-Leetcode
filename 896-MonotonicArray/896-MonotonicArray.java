@@ -59,3 +59,17 @@ class Solution {
         return true;
     }
 }
+
+class Solution {
+    public boolean isMonotonic(int[] nums) {
+        if(nums == null || nums.length <= 1) return true;
+        boolean increasing = true, decreasing = true;
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] < nums[i - 1]) increasing = false;
+        }
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] > nums[i - 1]) decreasing = false;
+        }
+        return increasing || decreasing;
+    }
+}
