@@ -65,3 +65,18 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int goodNodes(TreeNode root) {
+        if(root == null) return 0;
+        int[] res = new int[]{0};
+        dfs(root, root.val, res);
+        return res[0];
+    }
+    private void dfs(TreeNode node, int curr, int[] res){
+        if(node == null) return;
+        if(node.val >= curr) res[0]++;
+        dfs(node.left, Math.max(curr, node.val), res);
+        dfs(node.right, Math.max(curr, node.val), res);
+    }
+}
