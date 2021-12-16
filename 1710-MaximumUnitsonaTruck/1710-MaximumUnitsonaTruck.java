@@ -53,3 +53,22 @@ class Solution {
         return sum;
     }
 }
+
+class Solution {
+    public int maximumUnits(int[][] boxTypes, int truckSize) {
+        int res = 0;
+        Arrays.sort(boxTypes, (n1, n2) -> n2[1] - n1[1]);
+        for(int[] b : boxTypes){
+            if (truckSize == 0) break;
+            if(b[0] <= truckSize){
+                res += b[0] * b[1];
+                truckSize -= b[0];
+            }
+            else{
+                res += truckSize * b[1];
+                truckSize = 0;
+            }
+        }
+        return res;
+    }
+}
