@@ -92,3 +92,40 @@ class Solution {
         return true;
     }
 }
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ListNode slow = head, fast = head;
+        Stack<ListNode> stack = new Stack<>();
+        int len = 0;
+        while(fast != null && fast.next != null){
+            len++;
+            stack.push(slow);
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        int count = 0;
+        while(!stack.isEmpty() && slow != null){
+            len++;
+            if(count > 1) return false;
+            if(stack.peek().val != slow.val) {
+                count++;
+                slow = slow.next;
+                continue;
+            }
+            stack.pop();
+            slow = slow.next;
+        }
+        return len % 2 == 0 ? count == 0 : count == 1;
+    }
+}
