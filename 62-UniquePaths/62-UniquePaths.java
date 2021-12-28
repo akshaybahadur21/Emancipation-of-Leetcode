@@ -56,3 +56,17 @@ class Solution {
         vis[i][j] = false;
     }
 }
+
+class Solution {
+    public int uniquePaths(int m, int n) {
+        return dfs(0, 0, m, n, new Integer[m][n]);
+    }
+    private int dfs(int i, int j, int m, int n, Integer[][] cache){
+        if(i == m - 1 && j == n - 1) return 1;
+        if(i == -1 || j == -1 || i >= m || j >= n) return 0;
+        if(cache[i][j] != null) return cache[i][j];
+        int right = dfs(i, j + 1, m, n, cache);
+        int down = dfs(i + 1, j, m, n, cache);
+        return cache[i][j] = down + right;
+    }
+}
