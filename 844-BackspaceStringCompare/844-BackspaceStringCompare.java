@@ -70,3 +70,19 @@ class Solution {
         return false;
     }
 }
+
+class Solution {
+    public boolean backspaceCompare(String s, String t) {
+        String s1 = getString(s);
+        String s2 = getString(t);
+        return s1.equals(s2);
+    }
+    private String getString(String s){
+        StringBuilder sb = new StringBuilder();
+        for(char ch : s.toCharArray()){
+            if(ch == '#' && sb.length() > 0) sb.deleteCharAt(sb.length() - 1);
+            else if(ch != '#') sb.append(ch);
+        }
+        return sb.toString();
+    }
+}
