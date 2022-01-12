@@ -73,3 +73,25 @@ class Solution {
         }
     }
 }
+
+class Solution {
+    public List<List<Integer>> getFactors(int n) {
+        List<List<Integer>> resList = new ArrayList<>();
+        dfs(n, resList, new ArrayList<>(), 2);
+        return resList;
+    }
+    private void dfs(int n, List<List<Integer>> resList, List<Integer> list, int start){
+        if(n == 1){
+            if(list.size() > 1)
+                resList.add(new ArrayList<>(list));
+            return;
+        }
+        for(int i = start; i <= n; i++){
+            if(n % i == 0){
+                list.add(i);
+                dfs(n/i, resList, list, i);
+                list.remove(list.size() - 1);
+            }
+        }
+    }
+}
