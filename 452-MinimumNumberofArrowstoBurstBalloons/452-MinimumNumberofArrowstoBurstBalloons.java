@@ -62,3 +62,30 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int findMinArrowShots(int[][] points) {
+        // Arrays.sort(points, (n1, n2) -> n1[0] - n2[0]);
+         Arrays.sort(points, (o1, o2) -> {
+            // We can't simply use the o1[1] - o2[1] trick, as this will cause an 
+            // integer overflow for very large or small values.
+            if (o1[1] == o2[1]) return 0;
+            if (o1[1] < o2[1]) return -1;
+            return 1;
+        });
+        LinkedList<int[]> q = new LinkedList<>();
+        q.add(points[0]);
+        for(int i = 1; i < points.length; i++){
+            int[] curr = points[i];
+            int last[] = q.pollLast();
+           if(last[1] < curr[0]){
+               q.add(last);
+               q.add(curr);
+           } 
+            else{
+                q.add(new int[]{Math.max(curr[0], last[0]), Math.min(curr[1], last[1])});
+            }
+        }
+        return q.size();
+    }
+}
