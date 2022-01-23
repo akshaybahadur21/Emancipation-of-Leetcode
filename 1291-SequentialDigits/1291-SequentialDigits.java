@@ -55,3 +55,27 @@ class Solution {
         return true;
     }
 }
+
+
+class Solution {
+    public List<Integer> sequentialDigits(int low, int high) {
+        List<Integer> resList = new ArrayList<>();
+        for(int i = 1; i <= 9 - String.valueOf(low).length() + 1; i++)
+            dfs(i, low, high, resList, 0);
+        Collections.sort(resList);
+        return resList;
+    }
+    private void dfs(int start, int low, int high, List<Integer>resList, int curr){
+        if(curr >= low && curr <= high){
+        char[] arr = String.valueOf(curr).toCharArray();
+        for(int i = 1; i < arr.length; i++){
+            if(Character.getNumericValue(arr[i]) - Character.getNumericValue(arr[i-1]) != 1) return;
+        }
+            resList.add(curr);
+        }
+        if(curr > high) return;
+
+        dfs(start + 1, low, high, resList, curr * 10 + start);
+    }
+    
+}
