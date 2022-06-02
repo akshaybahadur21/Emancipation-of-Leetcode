@@ -39,3 +39,15 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int[] sumZero(int n) {
+        int[] res = new int[n];
+        int mid = n / 2;
+        for(int i = 0; i < mid; i++){
+            res[i] = -mid + i;
+            res[n - i - 1] = mid - i;
+        }
+        return res;
+    }
+}
