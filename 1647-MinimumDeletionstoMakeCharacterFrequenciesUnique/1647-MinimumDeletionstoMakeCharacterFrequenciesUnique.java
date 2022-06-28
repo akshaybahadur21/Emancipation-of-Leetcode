@@ -57,3 +57,28 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int minDeletions(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        Queue<Character> heap = new PriorityQueue<>((n1, n2) -> map.get(n2) - map.get(n1));
+        for(char ch : s.toCharArray()) map.put(ch, map.containsKey(ch) ? map.get(ch) + 1 : 1);
+        heap.addAll(map.keySet());
+        int res = 0;
+        while(!heap.isEmpty()){
+            if(heap.peek() == null) return res;
+            char curr = heap.poll();
+            if(heap.peek() == null) return res;
+            char next = heap.peek();
+            int v1 = map.get(curr);
+            int v2 = map.get(next);
+            if(v1 == v2) {
+                map.put(curr, map.get(curr) - 1);
+                res++;
+                if(map.get(curr) == 0) map.remove(curr);
+                else heap.add(curr);
+            }
+        }
+        return res;
+    }
+}
