@@ -101,3 +101,31 @@ class Solution {
         getInorderTraversal(root.right);
     }
 }
+
+class Solution {
+    public TreeNode increasingBST(TreeNode root) {
+        // Using Stack
+        Stack<TreeNode> s = new Stack<>();
+        TreeNode nr = new TreeNode();
+        TreeNode ret = nr;
+        while(root != null){
+            s.push(root);
+            root = root.left;
+        }
+        while(!s.isEmpty()){
+            TreeNode curr = s.pop();
+            nr.right = new TreeNode(curr.val);
+            nr = nr.right;
+            if(curr.right != null){
+                curr = curr.right;
+                s.push(curr);
+                while(curr.left != null){
+                    s.push(curr.left);
+                    curr = curr.left;
+                }
+            }
+        }
+        return ret.right;
+        
+    }
+}
