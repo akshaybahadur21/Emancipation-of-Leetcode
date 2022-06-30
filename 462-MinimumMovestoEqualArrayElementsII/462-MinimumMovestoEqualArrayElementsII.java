@@ -38,3 +38,15 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int minMoves2(int[] nums) {
+        // Use median
+        Arrays.sort(nums);
+        int res = 0;
+        for(int n : nums){
+            res += Math.abs(nums[nums.length / 2] - n);
+        }
+        return res;
+    }
+}
