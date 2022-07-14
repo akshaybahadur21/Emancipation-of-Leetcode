@@ -48,3 +48,23 @@ class Solution {
         return resArr;
     }
 }
+
+class Solution {
+    public int[] plusOne(int[] digits) {
+        List<Integer> list = new ArrayList<>();
+        int one = 1, carry = 0;
+        for(int i = digits.length - 1; i >= 0; i--){
+            int curr = digits[i];
+            curr = curr + one + carry;
+            if(curr >= 10){
+                carry = 1;
+                curr = curr % 10;
+            }
+            else carry = 0;
+            list.add(0, curr);
+            one = 0;
+        }
+        if(carry == 1)list.add(0, carry);
+        return list.stream().mapToInt(i->i).toArray();
+    }
+}
