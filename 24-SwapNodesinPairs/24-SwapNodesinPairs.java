@@ -59,3 +59,22 @@ class Solution {
         return newHead;
 }
 }
+
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        Stack<ListNode> stack = new Stack<>();
+        ListNode newHead = new ListNode(0);
+        ListNode temp = newHead;
+        while(head != null){
+            while(head != null && stack.size() < 2){
+                stack.push(head);
+                head = head.next;
+            }
+            while(!stack.isEmpty()){
+                temp.next = new ListNode(stack.pop().val);
+                temp = temp.next;
+            }
+        }
+        return newHead.next;
+    }
+}
