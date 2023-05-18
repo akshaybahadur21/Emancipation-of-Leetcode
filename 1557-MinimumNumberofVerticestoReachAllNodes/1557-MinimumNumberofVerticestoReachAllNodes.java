@@ -54,3 +54,25 @@ class Solution {
         return graph;
     }
 }
+
+class Solution {
+    public List<Integer> findSmallestSetOfVertices(int n, List<List<Integer>> edges) {
+        List<Integer> res = new ArrayList<>();
+        Map<Integer, List<Integer>> graph = getGraph(n, edges);
+        Set<Integer> inSet = new HashSet<>();
+        for(int e : graph.keySet()){
+            for(int vis : graph.get(e)) inSet.add(vis);
+        }
+        for(int i = 0 ; i < n; i++){
+            if(!inSet.contains(i)) res.add(i);
+        }
+        return res;
+    }
+    
+    private Map<Integer, List<Integer>> getGraph(int n, List<List<Integer>> edges){
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        for(int i = 0; i < n; i++) graph.put(i, new ArrayList<>());
+        for(List<Integer> edge : edges) graph.get(edge.get(0)).add(edge.get(1));
+        return graph;
+    }
+}
