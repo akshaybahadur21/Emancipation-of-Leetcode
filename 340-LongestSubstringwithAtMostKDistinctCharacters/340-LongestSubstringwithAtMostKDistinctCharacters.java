@@ -43,3 +43,24 @@ class Solution {
         return max;
     }
 }
+
+class Solution {
+    public int lengthOfLongestSubstringKDistinct(String s, int k) {
+        Map<Character, Integer> map = new HashMap<>();
+        Queue<Character> q = new LinkedList<>();
+        int res = 0, i = 0;
+        while(i < s.length()){
+            char curr = s.charAt(i++);
+            q.add(curr);
+            map.put(curr, map.containsKey(curr) ? map.get(curr) + 1 : 1);
+            while(map.size() > k){
+                char qu = q.poll();
+                map.put(qu, map.get(qu) - 1);
+                if(map.get(qu) == 0) map.remove(qu);
+            }
+            res = Math.max(res, q.size());
+        }
+        res = Math.max(res, q.size());
+        return res;
+    }
+}
