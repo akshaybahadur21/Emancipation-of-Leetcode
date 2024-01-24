@@ -75,3 +75,47 @@ class Solution {
         return true;
     }
 }
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int pseudoPalindromicPaths (TreeNode root) {
+        int[] map = new int[10];
+        int[] res = new int[]{0};
+        dfs(root, map, res);
+        return res[0];
+    }
+    
+    private void dfs(TreeNode node, int[] map, int[] res){
+        if(node == null) return;
+        map[node.val]++;
+        if(node.left == null && node.right == null){
+            if(checkPseudoPalindrom(map)) res[0]++;
+        }
+        dfs(node.left, map, res);
+        dfs(node.right, map, res);
+        map[node.val]--;
+    }
+    private boolean checkPseudoPalindrom(int[] map){
+        int count = 0;
+        for(int i = 0; i < map.length; i++){
+            if(map[i] % 2 == 0) continue;
+            else count++;
+        }
+        return count > 1 ? false : true;
+    }
+}
