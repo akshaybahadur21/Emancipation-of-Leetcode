@@ -60,3 +60,22 @@ class Solution {
         return res;
     }
 }
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int mul = 1, count = 0;
+        for(int n : nums){
+            if(n != 0)
+                mul = mul * n;
+            if(n == 0) count++;
+        }
+        int res[] = new int[nums.length];
+        if(count >= 2) return res;
+        for(int i = 0; i < nums.length; i++){
+            if(count == 1 && nums[i] == 0) res[i] = mul;
+            else if(count == 1 && nums[i] != 0) res[i] = 0;
+            else res[i] = mul/nums[i];
+        }
+        return res;
+    }
+}
