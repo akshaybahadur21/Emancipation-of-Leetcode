@@ -29,3 +29,36 @@ class Solution:
         res = [a * n * n + b * n + c for n in nums]
         res.sort()
         return res
+
+class Solution:
+    def sortTransformedArray(self, nums: List[int], a: int, b: int, c: int) -> List[int]:
+        lo, hi = 0, len(nums) - 1
+        res = [0] * len(nums)
+        if(a < 0):
+            counter = 0
+            while lo <= hi:
+                t_lo = self.transform(nums[lo], a, b, c)
+                t_hi = self.transform(nums[hi], a, b, c)
+                if t_lo < t_hi:
+                    res[counter] = t_lo
+                    lo += 1
+                else:
+                    res[counter] = t_hi
+                    hi -= 1
+                counter += 1
+        else:
+            counter = len(nums) - 1
+            while lo <= hi:
+                t_lo = self.transform(nums[lo], a, b, c)
+                t_hi = self.transform(nums[hi], a, b, c)
+                if t_lo > t_hi:
+                    res[counter] = t_lo
+                    lo += 1
+                else:
+                    res[counter] = t_hi
+                    hi -= 1
+                counter -= 1
+        return res
+
+    def transform(self, x: int, a: int, b: int, c: int) -> int:
+        return a*x*x + b*x + c;
