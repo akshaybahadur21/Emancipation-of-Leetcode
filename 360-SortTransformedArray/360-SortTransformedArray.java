@@ -38,3 +38,46 @@ class Solution {
         return res;
     }
 }
+
+
+// 2 pointer
+class Solution {
+    public int[] sortTransformedArray(int[] nums, int a, int b, int c) {
+        int[] res = new int[nums.length];
+        int lo = 0, hi = nums.length - 1;
+        if(a < 0){
+            int counter = 0;   
+            while(lo <= hi){
+                int t_lo = transform(nums[lo], a, b,c);
+                int t_hi = transform(nums[hi], a, b,c);
+                if(t_lo < t_hi){
+                    res[counter++] = t_lo;
+                    lo++;
+                }
+                else{
+                    res[counter++] = t_hi;
+                    hi--;
+                }
+            }
+        }
+        else{
+            int counter = nums.length - 1;
+            while(lo <= hi){
+                int t_lo = transform(nums[lo], a, b,c);
+                int t_hi = transform(nums[hi], a, b,c);
+                if(t_lo > t_hi) {
+                    res[counter--] = t_lo;
+                    lo++;
+                }
+                else{
+                    res[counter--] = t_hi;
+                    hi--;
+                }
+            }
+        }
+        return res;
+    }
+    private int transform(int x, int a, int b, int c){
+        return a*x*x + b*x + c;
+    }
+}
