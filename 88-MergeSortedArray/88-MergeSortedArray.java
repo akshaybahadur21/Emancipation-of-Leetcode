@@ -39,3 +39,17 @@ class Solution {
         }
     }
 }
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int hi = m + n - 1;
+        m--;
+        n--;
+        while(hi >= 0){
+            int n1 = m < 0 ? Integer.MIN_VALUE : nums1[m];
+            int n2 = n < 0 ? Integer.MIN_VALUE : nums2[n];
+            if(n1 > n2) nums1[hi--] = nums1[m--];
+            else nums1[hi--] = nums2[n--];
+        }
+    }
+}
