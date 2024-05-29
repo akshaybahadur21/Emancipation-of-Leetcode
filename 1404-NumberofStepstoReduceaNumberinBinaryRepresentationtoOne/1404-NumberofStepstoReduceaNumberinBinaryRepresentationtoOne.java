@@ -56,3 +56,22 @@ class Solution {
         return res;
     }
 }
+
+public class Solution {
+
+    public int numSteps(String s) {
+        int carry = 0;
+        int res = 0;
+        for(int i = s.length() - 1; i > 0; i--){
+            int val = Character.getNumericValue(s.charAt(i)) + carry;
+            if(val % 2 == 0) {
+                res++;
+            }
+            else{
+                res += 2;
+                carry = 1;
+            }
+        }
+        return res + carry;
+    }
+}
