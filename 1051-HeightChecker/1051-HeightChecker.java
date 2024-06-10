@@ -53,3 +53,18 @@ class Solution {
         return res;
     }
 }
+
+
+class Solution {
+    public int heightChecker(int[] heights) {
+        int[] map = new int[101];
+        for(int h : heights) map[h]++;
+        int res = 0, curr = 0;
+        for(int i = 0; i < heights.length; i++){
+            while(map[curr] == 0) curr++;
+            if(curr != heights[i]) res++;
+            map[curr]--;
+        }
+        return res;
+    }
+}
