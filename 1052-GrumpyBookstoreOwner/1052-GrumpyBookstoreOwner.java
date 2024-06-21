@@ -58,3 +58,34 @@ class Solution {
         return resMax;
     }
 }
+
+
+class Solution {
+    public int maxSatisfied(int[] customers, int[] grumpy, int minutes) {
+        int lo = 0, hi = 0, max = 0, temp = 0;
+        for(int i = 0; i < minutes; i++)temp += customers[i] * grumpy[i];
+        lo = 0; 
+        hi = minutes - 1;
+        max = Math.max(max, temp);
+        int i = 0, j = minutes;
+        while(j < customers.length){
+            temp -= customers[i]*grumpy[i];
+            temp += customers[j] * grumpy[j];
+            if(temp > max){
+                max = Math.max(temp, max);
+                lo = i + 1;
+                hi = j;
+            }
+            i++;
+            j++;
+        }
+        int res = 0;
+        for(i = 0; i < customers.length; i++){
+            if(i >= lo && i <= hi) res += customers[i];
+            else{
+                if (grumpy[i] == 0) res += customers[i];
+            }
+        }
+        return res;
+    }
+}
