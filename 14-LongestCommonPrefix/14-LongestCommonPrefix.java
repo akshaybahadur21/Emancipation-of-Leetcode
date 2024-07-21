@@ -52,3 +52,46 @@ class Solution {
         
     }
 }
+
+
+// Trie Approach
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        TrieNode root = new TrieNode();
+        TrieNode node = root;
+        insertInTrie(strs[0], node);
+        int res = strs[0].length();
+        for(int i = 1; i < strs.length; i++){
+            node = root;
+            int curr = search(node, strs[i]);
+            if(curr == 0) return "";
+            res = Math.min(res, curr);
+        }
+        return res == 0 ? "" : strs[0].substring(0, res);
+    }
+
+    private int search(TrieNode node, String word){
+        int res = 0;
+        for(char ch : word.toCharArray()){
+            if(!node.children.containsKey(ch)) return res;
+            res++;
+            node = node.children.get(ch);
+        }
+        return res;
+    }
+
+    private void insertInTrie(String word, TrieNode node){
+        for(char ch : word.toCharArray()){
+            if(!node.children.containsKey(ch)) node.children.put(ch, new TrieNode());
+            node = node.children.get(ch);
+        }
+    }
+}
+
+class TrieNode{
+    Map<Character, TrieNode> children;
+    TrieNode(){
+        this.children = new HashMap<>();
+    }
+}
