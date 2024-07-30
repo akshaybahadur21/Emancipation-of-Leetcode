@@ -39,3 +39,19 @@ class Solution:
             res = min(res, acount + bcount)
             if ch == "b": bcount += 1
         return res
+
+# Stack based approach
+
+class Solution:
+    def minimumDeletions(self, s: str) -> int:
+        res = 0
+        q = deque()
+        for ch in s:
+            if not q:
+                q.append(ch)
+                continue
+            if q[-1] == 'b' and ch == 'a': 
+                res += 1
+                q.pop()
+            else: q.append(ch)
+        return res
