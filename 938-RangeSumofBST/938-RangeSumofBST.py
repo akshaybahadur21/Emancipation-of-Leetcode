@@ -41,4 +41,19 @@ class Solution:
         res = [0]
         dfs(root)
         return res[0]
-        
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+        def dfs(node):
+            if node == None: return 0
+            if node.val >= low and node.val <= high: return node.val + dfs(node.left) + dfs(node.right)
+            if node.val < low: return dfs(node.right)
+            else: return dfs(node.left)
+        return dfs(root)
