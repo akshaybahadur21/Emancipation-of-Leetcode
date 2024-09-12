@@ -45,3 +45,16 @@ class Solution:
                 if _map[ord(w[i]) - ord('a')] > 0: count += 1
             res = res + 1 if count >= len(w) else res
         return res
+
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        mapp = {}
+        for a in allowed: mapp[a] = mapp.get(a, 0) + 1
+        res = 0
+        for w in words:
+            length = 0
+            for ch in w:
+                if ch not in mapp: break
+                length += 1
+            if length == len(w): res += 1
+        return res
