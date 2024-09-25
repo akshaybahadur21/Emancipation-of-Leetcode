@@ -63,3 +63,33 @@ class Solution:
                 count += mapp.get(temp)
             res.append(count)
         return res
+
+
+
+
+
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.count = 0
+
+class Solution:
+    def sumPrefixScores(self, words: List[str]) -> List[int]:
+        root = TrieNode()
+        def insert_in_trie(word):
+            node = root
+            for ch in word:
+                if ch not in node.children: node.children[ch] = TrieNode()
+                node = node.children[ch]
+                node.count += 1
+        for word in words:
+            insert_in_trie(word)
+        res = []
+        for word in words:
+            temp = 0
+            node = root
+            for ch in word:
+                node = node.children[ch]
+                temp += node.count
+            res.append(temp)
+        return res
