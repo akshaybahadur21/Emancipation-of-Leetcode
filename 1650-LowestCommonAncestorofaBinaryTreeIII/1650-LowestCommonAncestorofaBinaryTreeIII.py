@@ -62,3 +62,12 @@ class Solution:
             if q in vis: return q
             q = q.parent
         return None
+
+
+class Solution:
+    def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
+        a, b = p, q
+        while a != b:
+            a = q if not a else a.parent
+            b = p if not b else b.parent
+        return a
