@@ -53,3 +53,18 @@ class Solution:
                     for _ in range(k - 1):
                         stack.pop()
         return "".join(stack)
+
+class Solution:
+    def removeDuplicates(self, s: str, k: int) -> str:
+        stack = []
+        count_stack = []
+        for ch in s:
+            if not stack or stack[-1] != ch: 
+                stack.append(ch)
+                count_stack.append(1)
+            elif ch == stack[-1]:
+                count_stack[-1] += 1
+            if count_stack[-1] == k:
+                count_stack.pop()
+                stack.pop()
+        return "".join([stack[i] * count_stack[i] for i in range(len(stack))])
