@@ -58,3 +58,13 @@ class Solution:
             else:
                 lo += 1
         return res
+
+
+class Solution:
+    def findLHS(self, nums: List[int]) -> int:
+        mapp = Counter(nums)
+        res = 0
+        for k, v in mapp.items():
+            if (k + 1) in mapp:
+                res = max(res, mapp[k] + mapp[k + 1])
+        return res
