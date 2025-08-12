@@ -47,3 +47,22 @@ class Solution:
             res += take + skip
             return res
         return dfs(1, n) % 1000000007
+
+
+class Solution:
+    def numberOfWays(self, n: int, x: int) -> int:
+        def dfs(curr, target):
+            if target == 0: return 1
+            if curr > target: return 0
+            if cache[(curr, target)] > 0: return cache[(curr, target)]
+            res = 0
+            val = curr ** x
+            take, skip = 0, 0
+            if target - val >= 0:
+                take = dfs(curr + 1, target - val)
+                skip = dfs(curr + 1, target)
+            res += take + skip
+            cache[(curr, target)] = res
+            return res
+        cache = defaultdict(int)
+        return dfs(1, n) % 1000000007
