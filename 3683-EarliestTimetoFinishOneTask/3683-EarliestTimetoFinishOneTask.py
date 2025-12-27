@@ -42,3 +42,9 @@ class Solution:
         for s, t in tasks:
             heappush(heap, (s + t))
         return heappop(heap)
+
+
+class Solution:
+    def earliestTime(self, tasks: List[List[int]]) -> int:
+        tasks = sorted(tasks, key = lambda x: x[0] + x[1])
+        return tasks[0][0] + tasks[0][1]
