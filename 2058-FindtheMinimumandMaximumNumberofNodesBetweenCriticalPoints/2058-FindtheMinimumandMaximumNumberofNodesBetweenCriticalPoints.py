@@ -110,3 +110,33 @@ class Solution:
         
 
         
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
+        if not head or not head.next or not head.next.next: return [-1, -1]
+        one, two, three = head, head.next, head.next.next
+        clist = []
+        idx = 0
+        while three:
+            if two.val > one.val and two.val > three.val:
+                clist.append(idx)
+            elif two.val < one.val and two.val < three.val:
+                clist.append(idx)
+            idx += 1
+            one = one.next
+            two = two.next
+            three = three.next
+        if len(clist) < 2: return [-1, -1]
+        minn, maxx = float(inf), 0
+        for i in range(1, len(clist)):
+            prev = clist[i - 1]
+            curr = clist[i]
+            minn = min(minn, curr - prev)
+            maxx = max(maxx, curr - clist[0])
+        return [minn, maxx]
+
+        
