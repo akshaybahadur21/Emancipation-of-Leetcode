@@ -45,3 +45,18 @@ class Solution:
             ss = sorted(s, key = lambda x : ord(x))
             mapp["".join(ss)].append(s)
         return list(mapp.values())
+
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        mapp = defaultdict(list)
+        def validate():
+            if not strs or len(strs) == 0: return False
+            return True
+        if not validate(): return [[]]
+        for s in strs:
+            tmapp = [0] * 26
+            for ch in s:
+                tmapp[ord(ch) - ord('a')] += 1
+            mapp[tuple(tmapp)].append(s)    
+        return list(mapp.values())
