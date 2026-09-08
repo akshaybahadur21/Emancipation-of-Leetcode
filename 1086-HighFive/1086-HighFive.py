@@ -46,3 +46,11 @@ class Solution:
             res.append([k, val])
         return res
         
+
+class Solution:
+    def highFive(self, items: List[List[int]]) -> List[List[int]]:
+        mapp = defaultdict(list)
+        for sid, score in items:
+            heappush(mapp[sid], score)
+            if len(mapp[sid]) > 5: heappop(mapp[sid])
+        return [[k, sum(v) // len(v)] for k, v in sorted(mapp.items())]
