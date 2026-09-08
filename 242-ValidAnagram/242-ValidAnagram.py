@@ -34,3 +34,16 @@ class Solution:
         for ch in s: mapps[ch] = mapps.get(ch, 0) + 1
         for ch in t: mappt[ch] = mappt.get(ch, 0) + 1
         return mapps == mappt
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        mapp = defaultdict(int)
+        for ch in s: mapp[ch] += 1
+        for ch in t: mapp[ch] -= 1
+        for k, v in mapp.items():
+            if v != 0: return False
+        return True
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
