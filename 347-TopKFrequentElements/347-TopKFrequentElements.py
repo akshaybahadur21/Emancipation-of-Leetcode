@@ -40,3 +40,13 @@ class Solution:
             k -= 1
             res.append((heappop(heap))[1])
         return res
+
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        heap = []
+        mapp = Counter(nums)
+        for key, val in mapp.items():
+            heappush(heap, (val, key))
+            if len(heap) > k:
+                heappop(heap)
+        return [key for _, key in heap]
