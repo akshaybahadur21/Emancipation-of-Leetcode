@@ -42,3 +42,14 @@ class Solution:
         if root is None: return False
         elif dfs(root, subRoot): return True
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+
+
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        def dfs(n1, n2):
+            if not n1 and not n2: return True
+            if not n1 or not n2: return False
+            if n1.val != n2.val: return False
+            return dfs(n1.left, n2.left) and dfs(n1.right, n2.right)
+        if root is None: return False
+        return dfs(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
