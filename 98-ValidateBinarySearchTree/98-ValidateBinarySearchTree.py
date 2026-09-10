@@ -47,3 +47,12 @@ class Solution:
             if hi and node.val >= hi.val: return False
             return dfs(node.left, lo, node) and dfs(node.right, node, hi)
         return dfs(root, None, None)
+
+
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def dfs(node, minn, maxx):
+            if not node: return True
+            if node.val <= minn or node.val >= maxx: return False
+            return dfs(node.left, minn, node.val) and dfs(node.right, node.val, maxx)
+        return dfs(root, -inf, inf)
