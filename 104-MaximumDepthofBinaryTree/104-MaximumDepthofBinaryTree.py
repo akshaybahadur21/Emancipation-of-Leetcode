@@ -37,3 +37,15 @@ class Solution:
             right = dfs(node.right)
             return max(left, right) + 1
         return dfs(root)
+
+
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        def dfs(node, d):
+            if not node: return
+            res[0] = max(res[0], d)
+            dfs(node.left, d + 1)
+            dfs(node.right, d + 1)
+        res = [0]
+        dfs(root, 1)
+        return res[0]
