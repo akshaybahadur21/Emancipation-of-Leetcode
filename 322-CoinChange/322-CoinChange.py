@@ -63,3 +63,19 @@ class Solution:
             return cache[curr]
         val = dfs(0)
         return -1 if val == float("inf") else val
+
+
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        def dfs(curr):
+            if curr < 0: return inf
+            if curr == 0: return 0
+            if curr in cache: return cache[curr]
+            res = inf
+            for c in coins:
+                res = min(res, 1 + dfs(curr - c))
+            cache[curr] = res
+            return res
+        cache = {}
+        val = dfs(amount)
+        return val if val != inf else -1 
