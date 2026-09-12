@@ -40,3 +40,26 @@ class Solution:
                 return max(nums[idx] + dfs(idx + 2), dfs(idx + 1))
 
         return dfs(0)
+
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        @lru_cache()
+        def dfs(idx):
+            if idx >= len(nums): return 0
+            res = 0
+            take = nums[idx] + dfs(idx + 2)
+            skip = dfs(idx + 1)
+            res = max(take, skip)
+            return res
+        return max(dfs(0), dfs(1))
+
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        dp = [0] * (len(nums) + 2)
+        dp[-1] = 0
+        for i in range(len(nums) - 1, -1, -1):
+            dp[i] = max(dp[i + 1], nums[i] + dp [i + 2])
+        return dp[0]
+
