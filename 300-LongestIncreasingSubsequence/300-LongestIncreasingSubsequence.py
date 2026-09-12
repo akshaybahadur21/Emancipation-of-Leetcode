@@ -44,3 +44,16 @@ class Solution:
             return cache[(idx, prev)]
         cache = {}
         return dfs(0, -1)
+
+
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        dp = [[0] * (len(nums) + 1) for _ in range(len(nums) + 1)]
+        for idx in range(len(nums) - 1, -1, -1):
+            for prev in range(-1, idx):
+                skip = dp[idx + 1][prev + 1]
+                take = 0
+                if prev == -1 or nums[idx] > nums[prev]:
+                    take = 1 + dp[idx + 1][idx + 1]
+                dp[idx][prev + 1] = max(take, skip)
+        return dp[0][0]
