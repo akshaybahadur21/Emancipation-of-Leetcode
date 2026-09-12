@@ -48,3 +48,16 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         cache = [None for _ in range(len(s))]
         return self.dfs(s, 0, set(wordDict), cache)
+
+
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        wordDict = set(wordDict)
+        dp = [False] * (len(s) + 1)
+        dp[-1] = True
+        for idx in range(len(s) - 1, -1, -1):
+            for i in range(idx + 1, len(s) + 1):
+                if s[idx: i] in wordDict and dp[i]:
+                    dp[idx] = True
+                    break
+        return dp[0]
