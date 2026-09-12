@@ -42,3 +42,17 @@ class Solution:
             cache[idx] = max(take, skip)
             return cache[idx]
         return max(dfs(0, len(nums) - 1, [None] * len(nums)), dfs(1, len(nums), [None] * len(nums)))
+
+
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        def do_rob(start, end):
+            dp = [0] * (len(nums) + 2)
+            for i in range(end - 1, start -1, -1):
+                dp[i] = max(
+                        dp[i + 1], 
+                        nums[i] + dp[i + 2])
+            return dp[start]
+        if len(nums) == 1: return nums[0]
+        return max(do_rob(0, len(nums) - 1), do_rob(1, len(nums)))
