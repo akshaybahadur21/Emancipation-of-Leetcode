@@ -48,3 +48,21 @@ class Solution:
             res.append(intervals[i])
             i += 1
         return res
+
+
+class Solution:
+    def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
+        # insert interval and then merge
+        intervals.append(newInterval)
+        intervals = sorted(intervals, key = lambda x: x[0])
+        res = []
+        res.append(intervals[0])
+
+        for i in range(1, len(intervals)):
+            prev, curr = res.pop(), intervals[i]
+            if prev[1] >= curr[0]:
+                res.append([min(curr[0], prev[0]), max(curr[1], prev[1])])
+            else:
+                res.append(prev)
+                res.append(curr)
+        return res
