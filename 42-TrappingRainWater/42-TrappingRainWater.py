@@ -36,3 +36,19 @@ class Solution:
         for i in range(len(height)):
             res += min(left[i], right[i]) - height[i]
         return res
+
+class Solution:
+    def trap(self, height: list[int]) -> int:
+        lo, hi = 0, len(height) - 1
+        maxlo, maxhi = height[0], height[-1]
+        res = 0
+        while lo < hi:
+            if height[lo] < height[hi]:
+                maxlo = max(maxlo, height[lo])
+                res += maxlo - height[lo]
+                lo += 1
+            else:
+                maxhi = max(maxhi, height[hi])
+                res += maxhi - height[hi]
+                hi -= 1
+        return res
