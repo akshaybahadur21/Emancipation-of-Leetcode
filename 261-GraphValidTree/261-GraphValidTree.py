@@ -49,3 +49,23 @@ class Solution:
             if not v: return False
         return True
         return False
+
+
+class Solution:
+    def validTree(self, n: int, edges: list[list[int]]) -> bool:
+        def get_graph():
+            graph = defaultdict(list)
+            for a, b in edges:
+                graph[a].append(b)
+                graph[b].append(a)
+            return graph
+        def dfs(node, parent):
+            vis.add(node)
+            for c in graph[node]:
+                if c == parent: continue
+                if c in vis: return False
+                if not dfs(c, node): return False
+            return True
+        graph = get_graph()
+        vis = set()
+        return dfs(0, -1) and len(vis) == n
