@@ -39,7 +39,7 @@ class Solution:
         def can_eat(k):
             curr_hrs = 0
             for p in piles:
-                curr_hrs += -(-p//k)
+                curr_hrs += -(-p//k) # can use curr_hrs += math.ceil(p/k)
             return curr_hrs <= h
         while lo < hi:
             mid = lo + (hi - lo) // 2
