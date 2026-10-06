@@ -58,3 +58,25 @@ class Solution:
 
         cache = {}
         return dfs(0)
+
+
+class Solution:
+    def jobScheduling(self, startTime: list[int], endTime: list[int], profit: list[int]) -> int:
+        arr = []
+        for i in range(len(startTime)):
+            arr.append([startTime[i], endTime[i], profit[i]])
+        arr = sorted(arr, key = lambda x: x[0])
+
+        def dfs(idx):
+            if idx >= len(arr): return 0
+            if idx in cache: return cache[idx]
+            curr_s, curr_e, curr_p = arr[idx]
+            start_arr = [job[0] for job in arr]
+            next_idx = bisect.bisect_left(start_arr, curr_e) # bisect left because we are looking at next start >= curr end 
+            take = curr_p + dfs(next_idx)                    # not next start > curr end
+            skip = dfs(idx + 1)
+            cache[idx] = max(take, skip)
+            return cache[idx]
+
+        cache = {}
+        return dfs(0)
