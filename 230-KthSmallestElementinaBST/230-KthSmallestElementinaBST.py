@@ -45,3 +45,15 @@ class Solution:
             k -= 1
             root = root.right
         return -1
+
+
+class Solution:
+    def kthSmallest(self, root: TreeNode | None, k: int) -> int:
+        res = []
+        def dfs(node):
+            if not node: return
+            dfs(node.left)
+            res.append(node.val)
+            dfs(node.right)
+        dfs(root)
+        return res[k - 1]
