@@ -46,3 +46,18 @@ class Solution:
             temp = temp.next
         return newhead.next
         
+
+class Solution:
+    def reverseList(self, head: ListNode | None) -> ListNode | None:
+        s = []
+        while head: 
+            temp = head.next
+            head.next = None
+            s.append(head)
+            head = temp
+        newhead = ListNode(0)
+        temp = newhead
+        while s:
+            temp.next = ListNode(s.pop().val)
+            temp = temp.next
+        return newhead.next
