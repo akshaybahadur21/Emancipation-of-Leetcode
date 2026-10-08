@@ -61,3 +61,14 @@ class Solution:
             temp.next = ListNode(s.pop().val)
             temp = temp.next
         return newhead.next
+
+
+class Solution:
+    def reverseList(self, head: ListNode | None) -> ListNode | None:
+        if not head or not head.next: return head
+        prev, curr = None, head
+        while curr:
+            nextt = curr.next
+            curr.next = prev
+            prev, curr = curr, nextt, 
+        return prev
