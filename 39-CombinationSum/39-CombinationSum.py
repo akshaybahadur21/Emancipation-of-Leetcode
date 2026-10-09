@@ -50,3 +50,22 @@ class Solution:
         res = []
         dfs(0, 0, [])
         return res
+
+
+# User sorting and checking the next element can be a sum or not
+class Solution:
+    def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
+        def dfs(idx, curr):
+            if idx >= len(candidates): return
+            if sum(curr) > target: return
+            if sum(curr) == target:
+                res.append(curr[:])
+                return
+            for i in range(idx, len(candidates)):
+                if sum(curr) + candidates[i] > target:
+                    return
+                dfs(i, curr + [candidates[i]])
+        res = []
+        candidates = sorted(candidates)
+        dfs(0, [])
+        return res
