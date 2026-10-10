@@ -39,6 +39,7 @@ Constraints:
 
 """
 
+# TLE
 class Solution:
     def minSumSquareDiff(self, nums1: list[int], nums2: list[int], k1: int, k2: int) -> int:
         if not nums1 or not nums2 or len(nums1) == 0 or len(nums1) != len(nums2): return -1
