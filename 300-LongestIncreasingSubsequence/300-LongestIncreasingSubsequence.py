@@ -57,3 +57,21 @@ class Solution:
                     take = 1 + dp[idx + 1][idx + 1]
                 dp[idx][prev + 1] = max(take, skip)
         return dp[0][0]
+
+
+
+# TLE since I am storing maxx and not prev_idx for max
+class Solution:
+    def lengthOfLIS(self, nums: list[int]) -> int:
+        def dfs(idx, maxx):
+            if idx >= len(nums): return 0
+            if (idx, maxx) in cache: return cache[(idx, maxx)]
+            take, skip = 0, 0
+            if nums[idx] > maxx:
+                take = 1 + dfs(idx + 1, nums[idx])
+            skip = dfs(idx + 1, maxx)
+            cache[(idx, maxx)] = max(take, skip)
+            return cache[(idx, maxx)]
+        cache = {}
+        return dfs(0, -inf)
+            
