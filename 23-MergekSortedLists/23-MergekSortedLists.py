@@ -89,3 +89,29 @@ class Solution:
             return merge(l1, l2)
             return merge(l1, l2);
         return partition(0, len(lists) - 1)
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
+        heap = []
+        i = 0
+        for head in lists:
+            if head:
+                heappush(heap, (head.val, i, head))
+            i += 1
+        newhead = ListNode(0)
+        curr = newhead
+        while heap:
+            _, _, head = heappop(heap)
+            curr.next = head
+            curr = curr.next
+            if head.next:
+                head = head.next
+                heappush(heap, (head.val, i, head))
+                i += 1
+        return newhead.next
