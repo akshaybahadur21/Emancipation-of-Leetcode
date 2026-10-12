@@ -47,3 +47,10 @@ class Solution:
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return sorted(s) == sorted(t)
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        mapp = [0] * 26
+        for ch in s: mapp[ord(ch) - ord('a')] += 1
+        for ch in t: mapp[ord(ch) - ord('a')] -= 1
+        return any(mapp) == 0
