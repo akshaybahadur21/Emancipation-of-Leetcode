@@ -37,3 +37,17 @@ class Solution:
             stack.append(i)
         return res
             
+class Solution:
+    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
+        res = [0] * len(temperatures)
+        s = []
+        for i, t in enumerate(temperatures):
+            if not s:
+                s.append([i, t])
+            else:
+                if t > s[-1][1]: # new temperature is bigger than previous
+                    while s and s[-1][1] < t:
+                        popped_i, popped_t = s.pop()
+                        res[popped_i] = i - popped_i
+                s.append([i, t])
+        return res
