@@ -53,3 +53,26 @@ class Solution:
             for j in range(len(matrix[0])):
                 res = max(res, dfs(i, j))
         return res
+
+
+class Solution:
+    def longestIncreasingPath(self, matrix: list[list[int]]) -> int:
+        def dfs(i, j, prev):
+            if i < 0 or j < 0 or i >= len(matrix) or j >= len(matrix[0]): return 0
+            if prev != -1 and matrix[i][j] <= prev: return 0
+            if (i, j) in cache: return cache[(i, j)]
+            down = dfs(i + 1, j, matrix[i][j])
+            up = dfs(i - 1, j, matrix[i][j])
+            right = dfs(i, j + 1, matrix[i][j])
+            left = dfs(i, j - 1, matrix[i][j])
+            cache[(i, j)] = 1 + max(up, down, left, right)
+            return cache[(i, j)]
+
+        dirs = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        res = 0
+        cache = {}
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                curr = dfs(i, j, -1)
+                res = max(res, curr)
+        return res
