@@ -33,3 +33,22 @@ class Solution:
             if len(heap) > k: heapq.heappop(heap)
         if len(heap) == 0: return -1
         return heapq.heappop(heap)
+
+
+class Solution:
+    #quick select
+    def findKthLargest(self, nums: list[int], k: int) -> int:
+        def quickselect(nums, k):
+            pivot_val = random.choice(nums)
+            left, mid, right = [], [], []
+            for n in nums:
+                if n < pivot_val: right.append(n)
+                elif n > pivot_val: left.append(n)
+                else: mid.append(n)
+            
+            if k <= len(left): # k is in left side [large elements]
+                return quickselect(left, k)
+            if k > len(left) + len(mid):# k is in right side [small elements]
+                return quickselect(right, k - (len(left) + len(mid)))
+            return pivot_val
+        return quickselect(nums, k)
