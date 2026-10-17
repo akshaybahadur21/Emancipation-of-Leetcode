@@ -50,3 +50,18 @@ class Solution:
             return cache[(i1, i2)]
         cache = {}
         return dfs(0, 0)
+
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        def dfs(i1, i2):
+            if i1 == len(word1): return len(word2) - i2
+            if i2 == len(word2): return len(word1) - i1
+            if (i1, i2) in cache: return cache[(i1, i2)]
+            take = inf
+            if word1[i1] == word2[i2]:
+                take = dfs(i1 + 1, i2 + 1)
+            skip = 1 + min(dfs(i1, i2 + 1), dfs(i1 + 1, i2), dfs(i1 + 1, i2 + 1))
+            cache[(i1, i2)] = min(take, skip)
+            return cache[(i1, i2)]
+        cache = {}
+        return dfs(0, 0)
