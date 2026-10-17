@@ -52,3 +52,19 @@ class Solution:
                 res += maxhi - height[hi]
                 hi -= 1
         return res
+
+class Solution:
+    def trap(self, height: list[int]) -> int:
+        lo, hi = 0, len(height) - 1
+        lmax, rmax = 0, 0
+        res = 0
+        while lo < hi:
+            lmax = max(lmax, height[lo])
+            rmax = max(rmax, height[hi])
+            if lmax < rmax:
+                res += lmax - height[lo]
+                lo += 1
+            else:
+                res += rmax - height[hi]
+                hi -= 1
+        return res
