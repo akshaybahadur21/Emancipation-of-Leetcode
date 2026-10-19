@@ -44,3 +44,15 @@ class Solution:
             if n == target:
                 res.append(i)
         return res
+
+
+class Solution:
+    def targetIndices(self, nums: list[int], target: int) -> list[int]:
+        small, equal = [], 0
+        for n in nums:
+            if n < target: small.append(n)
+            elif n == target: equal += 1
+        res = []
+        for i in range(equal):
+            res.append(len(small) + i)
+        return res
