@@ -52,3 +52,18 @@ class Solution:
             if len(heap) > 2: heappop(heap)
         if len(heap) != 2: return -1
         return -heappop(heap)
+
+
+class Solution:
+    def findSecondMinimumValue(self, root: TreeNode | None) -> int:
+        res = [inf, inf]
+        def dfs(node):
+            if not node: return
+            if node.val < res[0]:
+                res[0] = node.val
+            elif res[0] < node.val < res[1]:
+                res[1] = node.val
+            dfs(node.left)
+            dfs(node.right)
+        dfs(root)
+        return res[1] if res[1] != inf else -1
