@@ -54,8 +54,24 @@ class WordDistance:
             for w2 in self.map[word2]:
                 ret = min(ret, abs(w1-w2))
         return ret
-        
 
-# Your WordDistance object will be instantiated and called as such:
-# obj = WordDistance(wordsDict)
-# param_1 = obj.shortest(word1,word2)
+
+class WordDistance:
+
+    def __init__(self, wordsDict: list[str]):
+        self.mapp = defaultdict(list)
+        for i, word in enumerate(wordsDict):
+            self.mapp[word].append(i)
+
+    def shortest(self, word1: str, word2: str) -> int:
+        if word1 not in self.mapp or word2 not in self.mapp: return -1
+        l1, l2 = self.mapp[word1], self.mapp[word2]
+        p1, p2 = 0, 0
+        res = inf
+        while p1 < len(l1) and p2 < len(l2):
+            res = min(res, abs(l1[p1] - l2[p2]))
+            if l1[p1] < l2[p2]:
+                p1 += 1
+            else:
+                p2 += 1
+        return res
