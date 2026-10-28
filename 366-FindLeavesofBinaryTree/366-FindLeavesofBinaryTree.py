@@ -49,3 +49,20 @@ class Solution:
             root = dfs(root, listt)
             if listt: res.append(listt)
         return res
+
+
+# Bucket at each depth above the root
+
+class Solution:
+    def findLeaves(self, root: TreeNode | None) -> list[list[int]]:
+        def dfs(node, depth):
+            if not node: 
+                return -1
+            left_d = dfs(node.left, depth)
+            right_d = dfs(node.right, depth)
+            depth = 1 + max(left_d, right_d)
+            res[depth].append(node.val)
+            return depth
+        res = defaultdict(list)
+        dfs(root, 0)
+        return list(res.values())
