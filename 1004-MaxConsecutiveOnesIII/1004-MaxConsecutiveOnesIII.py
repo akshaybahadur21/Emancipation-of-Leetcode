@@ -43,3 +43,16 @@ class Solution:
                     count -= 1
                     lo += 1
         return res
+
+
+class Solution:
+    def longestOnes(self, nums: list[int], k: int) -> int:
+        lo, hi = 0, 0
+        for hi in range(len(nums)):
+            if nums[hi] == 0:
+                k -= 1
+            if k < 0:
+                if nums[lo] == 0:
+                    k += 1
+                lo += 1
+        return len(nums) - lo
